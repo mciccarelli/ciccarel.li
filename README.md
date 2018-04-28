@@ -1,10 +1,10 @@
-# ciccarel.li -- portfolio site
+# portfolio site
 
-Isomorphic React app built with [Next.js](https://github.com/zeit/next.js)
+isomorphic javascript app built with [next.js](https://github.com/zeit/next.js)
 
-## How to use
+## how to use
 
-Install it and run:
+install it and run:
 
 ```bash
 npm install
