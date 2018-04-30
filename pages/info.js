@@ -1,16 +1,10 @@
-import { PureComponent } from 'react'
-import { Layout } from '../components'
-
-export default class Info extends PureComponent {
-  static async getInitialProps({ pathname }) {
-    return { pathname }
-  }
-
-  render() {
-    return (
-      <Layout {...this.props}>
-        <p>info</p>
-      </Layout>
-    )
-  }
-}
+export default () => (
+  <div>
+    <p>info</p>
+    <style jsx>{`
+      p {
+        background-color: #7777ff;
+      }
+    `}</style>
+  </div>
+)

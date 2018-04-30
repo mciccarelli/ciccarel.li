@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { withRouter } from 'next/router'
 
 const socialLinks = [
   { text: 'twitter', url: 'https://twitter.com/mciccarelli' },
@@ -13,7 +14,7 @@ const menuItems = [
   { text: 'info', pathname: '/info' }
 ]
 
-export default ({ pathname }) => (
+const Nav = ({ router: { pathname } }) => (
   <nav className="nav">
     <ul className="nav__social">
       {socialLinks.map((item, index) => (
@@ -27,7 +28,7 @@ export default ({ pathname }) => (
     <ul className="nav__menu">
       {menuItems.map((item, index) => (
         <li key={`menu-item-${index}`}>
-          <Link href={item.pathname}>
+          <Link prefetch href={item.pathname}>
             <a className={pathname === item.pathname ? 'active' : ''}>
               {item.text}
             </a>
@@ -64,10 +65,42 @@ export default ({ pathname }) => (
           text-align: right;
         }
 
-        & a {
-          pointer-events: all;
+        a {
+          display: inline-block;
           position: relative;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: var(--white);
+          pointer-events: all;
+
+          &:after {
+            display: block;
+            bottom: 2px;
+            left: 0;
+            width: 1px;
+            height: 1px;
+            position: absolute;
+            content: '';
+            background: var(--dark_grey);
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+            opacity: 0;
+            transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+              opacity 0.1s linear 0.3s;
+          }
+
+          &:hover,
+          &:active {
+            &:after {
+              width: 100%;
+              opacity: 1;
+              filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+              transition-delay: 0s;
+            }
+          }
+
           &.active::before {
+            display: inline-block;
+            content: '';
             position: absolute;
             top: 50%;
             left: -10px;
@@ -76,9 +109,8 @@ export default ({ pathname }) => (
             transform: translateY(-60%);
             background-color: var(--accent);
             border-radius: 50%;
-            display: inline-block;
-            content: '';
           }
+
           &.email {
             color: var(--accent);
           }
@@ -87,3 +119,5 @@ export default ({ pathname }) => (
     `}</style>
   </nav>
 )
+
+export default withRouter(Nav)

@@ -43,31 +43,24 @@ export default css`
 
   :root {
     --black: #070707;
-    --white: #FEFFFF;
-    --light_grey: #D2D2D2;
-    --dark_grey: #6D6D6D;
-    --accent: #F8C7CC;
+    --white: #feffff;
+    --light_grey: #d2d2d2;
+    --dark_grey: #6d6d6d;
+    --accent: #ef6807;
     --font_family_sans_serif: 'DINPro', Arial, Helvetica, sans-serif;
     --font_family_mono: 'Nitti', 'Courier New', Courier, monospace;
-    --animation_delay: 2s;
+    --animation_delay: 1.5s;
     --duration: 800ms;
     --iterations: 1;
+    --transition_speed: 400ms;
     --max_width: 960px;
     --mobile-bp: 'min-width: 500px';
   }
 
-  ::selection {
-    color: var(--black);
-    background: var(--accent)
-  }
-
-  html {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    font-weight: 400;
-    font-family: var(--font_family_sans_serif);
-    background: var(--black);
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
 
   html,
@@ -77,17 +70,20 @@ export default css`
     box-sizing: border-box;
   }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
+  html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--white);
   }
 
   p,
   li {
     font: 400 0.875rem/1.5 var(--font_family_mono);
-    color: var(--white);
-    text-transform: uppercase;
   }
 
   h1,
@@ -95,39 +91,16 @@ export default css`
   h3,
   h4,
   h5 {
-    font: 700 1.125rem/1.5 var(--font_family_sans_serif);
-    color: var(--white);
+    font: 700 1.125rem/1.2 var(--font_family_sans_serif);
   }
 
   a {
     text-decoration: none;
     color: var(--white);
-    display: inline-block;
-    position: relative;
+  }
 
-    &:after {
-      display: block;
-      position: absolute;
-      bottom: 2px;
-      left: 0;
-      width: 1px;
-      height: 1px;
-      background: var(--dark_grey);
-      content: '';
-      filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-      opacity: 0;
-      transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1),
-        opacity 0.1s linear 0.3s;
-    }
-
-    &:hover,
-    &:active {
-      &:after {
-        width: 100%;
-        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
-        opacity: 1;
-        transition-delay: 0s;
-      }
-    }
+  & ::selection {
+    color: var(--white);
+    background: var(--accent);
   }
 `

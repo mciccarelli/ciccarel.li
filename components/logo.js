@@ -1,8 +1,13 @@
+import Link from 'next/link'
 import LogoSVG from '../static/logo.svg'
 
 export default () => (
   <div className="logo">
-    <LogoSVG />
+    <Link href="/">
+      <a>
+        <LogoSVG />
+      </a>
+    </Link>
     <style jsx>{`
       .logo {
         position: fixed;
@@ -10,11 +15,6 @@ export default () => (
         top: 0;
         padding: 5rem;
         transform: translateY(1rem);
-
-        * {
-          fill: var(--white);
-          color: var(--white);
-        }
       }
     `}</style>
   </div>
