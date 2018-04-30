@@ -1,0 +1,135 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "type": "website",
+      "title": "Chae Hawk",
+      "client": "Team Radio",
+      "info": "Static HTML/CSS, JavaScript, youtube API",
+      "url": "http://chaehawk.com/"
+    },
+    {
+      "id": 0,
+      "type": "website",
+      "title": "Team Radio",
+      "client": "Team Radio",
+      "info": "WordPress, PHP, JavaScript",
+      "url": "http://teamradio.net/"
+    },
+    {
+      "id": 0,
+      "title": "Grey Global",
+      "type": "website",
+      "client": "Grey Group",
+      "info": "Pimcore, PHP, backbone.js, jQuery",
+      "url": "http://grey.com/"
+    },
+    {
+      "id": 0,
+      "type": "website",
+      "title": "Formless",
+      "client": "Formless",
+      "info": "WordPress, JavaScript, jquery",
+      "url": "http://formlessny.com/"
+    },
+    {
+      "id": 0,
+      "title": "Naked Music",
+      "type": "website",
+      "client": "Naked Music",
+      "info": "WordPress, JavaScript, jQuery",
+      "url": "http://www.naked-music.com"
+    },
+    {
+      "id": 0,
+      "title": "Broader Perspectives",
+      "type": "website",
+      "client": "WSJ x PwC",
+      "info": "WordPress, JavaScript, jQuery",
+      "url": "http://sponsoredcontent.wsj.com/pwc/broader-perspectives/"
+    },
+    {
+      "id": 0,
+      "title": "Live Nation TV",
+      "type": "website",
+      "client": "Live Nation x VICE",
+      "info": "Laravel, PostgresQL, Vue.js",
+      "url": "https://livenation.vice.com/"
+    },
+    {
+      "id": 0,
+      "title": "VICE: Broadly",
+      "type": "website",
+      "client": "VICE",
+      "info": "Node.js, React, REST API",
+      "url": "http://broadly.vice.com"
+    },
+    {
+      "id": 0,
+      "title": "Design Tool",
+      "type": "website",
+      "client": "Filzfelt x Spinneybeck",
+      "info": "Node.js, SQLite, Vue.js, d3.js",
+      "url": "http://dt.filzfelt.com"
+    },
+    {
+      "id": 0,
+      "title": "VICELAND",
+      "type": "website",
+      "client": "VICE",
+      "info": "Node.js, React, REST API, JW Player",
+      "url": "http://viceland.com"
+    },
+    {
+      "id": 0,
+      "title": "REDGE SALONS",
+      "type": "website",
+      "client": "REDGE",
+      "info": "WordPress, JavaScript, Stripe",
+      "url": "http://redgesalons.com"
+    },
+    {
+      "id": 0,
+      "title": "VICE: Noisey",
+      "type": "website",
+      "client": "VICE",
+      "info": "Node API, React, Webpack, int'l",
+      "url": "http://noisey.vice.com"
+    },
+    {
+      "id": 0,
+      "title": "Flipside Crypto",
+      "client": "Flipside Crypto",
+      "info": "python, GraphQL, React, Stripe, Highcharts.js",
+      "url": "http://data.flipsidecrypto.com"
+    },
+    {
+      "id": 0,
+      "title": "VENN Skincare",
+      "client": "Pentagram x VENN",
+      "info": "Shopify, Liquid, JavaScript, Instagram API",
+      "url": "http://vennskincare.com"
+    },
+    {
+      "id": 0,
+      "title": "The Bedari Foundation",
+      "client": "Wet Cement x TBF",
+      "info": "Gatsby.js static site, GraphQL, Contentful CMS",
+      "url": "https://suspicious-aryabhata-009c8b.netlify.com"
+    },
+    {
+      "id": 0,
+      "title": "Avatar Companies",
+      "client": "Wet Cement x Avatar",
+      "info": "Next.js, React, styled-components, Contentful CMS",
+      "url": "http://avatarco.now.sh"
+    },
+    {
+      "id": 0,
+      "title": "Made 2 Measure",
+      "client": "Elephant x m2m",
+      "info": "Universal JavaScript, Node, React, Contentful CMS, Ooyala",
+      "url": "http://m2m.tv"
+    }
+  ]
+}
