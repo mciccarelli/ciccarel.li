@@ -18,11 +18,5 @@
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^0.5.2"
-  },
-  "postcss": {
-    "plugins": {
-      "lost": {},
-      "postcss-nested": {}
-    }
   }
 }
