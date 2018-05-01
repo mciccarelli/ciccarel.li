@@ -14,7 +14,7 @@ export default () => (
         left: 0;
         top: 0;
         padding: 5rem;
-        transform: translateY(1rem);
+        transform: translateY(0.625rem);
       }
     `}</style>
   </div>

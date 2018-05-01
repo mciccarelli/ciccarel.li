@@ -44,17 +44,17 @@ export default css`
   :root {
     --black: #070707;
     --white: #feffff;
-    --light_grey: #d2d2d2;
-    --dark_grey: #6d6d6d;
+    --lightGrey: #d2d2d2;
+    --darkGrey: #6d6d6d;
     --accent: #ef6807;
-    --font_family_sans_serif: 'DINPro', Arial, Helvetica, sans-serif;
-    --font_family_mono: 'Nitti', 'Courier New', Courier, monospace;
-    --animation_delay: 1.5s;
+    --fontFamilySansSerif: 'DINPro', Arial, Helvetica, sans-serif;
+    --fontFamilyMono: 'Nitti', 'Courier New', Courier, monospace;
+    --animationDelay: 1.5s;
     --duration: 800ms;
     --iterations: 1;
-    --transition_speed: 400ms;
-    --max_width: 960px;
-    --mobile_bp: '(min-width: 500px)';
+    --transitionSpeed: 400ms;
+    --maxWidth: 960px;
+    --mobileBp: '(min-width: 500px)';
   }
 
   *,
@@ -83,7 +83,7 @@ export default css`
 
   p,
   li {
-    font: 400 0.875rem/1.5 var(--font_family_mono);
+    font: 400 0.875rem/1.5 var(--fontFamilyMono);
   }
 
   h1,
@@ -91,7 +91,7 @@ export default css`
   h3,
   h4,
   h5 {
-    font: 700 1.125rem/1.2 var(--font_family_sans_serif);
+    font: 700 1.125rem/1.2 var(--fontFamilySansSerif);
   }
 
   a {

@@ -36,62 +36,62 @@ export default class Projects extends Component {
         </ol>
         <div className="details">
           <p>
-            * Projects listed in reverse chronological order ranging from 2012 -
-            2018. Most often I would of filled the role of a front-end developer
-            but am used to wearing many hats both while working with clients, as
-            well as my own self-initiated projects. If you'd like to learn more
-            or to discuss a project,{' '}
-            <a href="mailto:m@ciccarel.li">send me an email</a> and I'll get
+            * Projects listed in reverse chronological order from 2012 - 2018.
+            In most cases, I would have filled the role of a front-end developer
+            but am used to wearing many hats both while freelancing, as well as
+            working on my own self-initiated projects. If you'd like to learn
+            more or to discuss a project,{' '}
+            <a href="mailto:m@ciccarel.li">drop me an email</a> and I'll get
             back to you as soon as possible.
           </p>
         </div>
         <style jsx>{`
           section {
-            lost-center: var(--max_width);
+            lost-center: var(--maxWidth);
             padding-top: 10rem;
             width: 100%;
 
             & h5 {
-              font: 400 0.875rem/1.25rem var(--font_family_mono);
+              font: 400 0.875rem/1.25rem var(--fontFamilyMono);
               text-transform: uppercase;
               color: var(--dark_grey);
             }
 
             & p {
-              font: 400 0.875rem/1.5 var(--font_family_sans_serif);
-              color: var(--dark_grey);
+              font: 400 0.875rem/1.5 var(--fontFamilySansSerif);
+              color: var(--darkGrey);
               text-transform: none;
               max-width: 570px;
               margin: 0;
 
               & a {
-                border-bottom: 1px solid var(--accent);
+                border-bottom: 1px dotted var(--darkGrey);
               }
             }
 
             .plist {
-              margin: 0;
-              padding: 0;
               list-style-type: none;
+              margin: 0 0 1.5rem;
+              padding: 0;
               &__item {
                 text-align: left;
                 position: relative;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
 
                 &:last-of-type {
                   margin-bottom: 0;
                 }
 
                 &__number {
-                  font: 400 0.75rem/1.25rem var(--font_family_sans_serif);
+                  font: 400 0.75rem/1.25rem var(--fontFamilySansSerif);
                   position: absolute;
                   top: 10px;
                   left: -40px;
-                  color: var(--dark_grey);
+                  color: var(--darkGrey);
                 }
 
                 &__title {
-                  font: 700 4rem/1 var(--font_family_sans_serif);
+                  font: 700 4rem/1 var(--fontFamilySansSerif);
                   text-transform: uppercase;
                   display: inline-block;
                   position: relative;
@@ -122,8 +122,8 @@ export default class Projects extends Component {
                     height: 30px;
                     width: 0;
                     background: var(--accent);
-                    /*transition: width  var(--transition_speed) ease;*/
-                    transition: width var(--transition_speed)
+                    /*transition: width  var(--transitionSpeed) ease;*/
+                    transition: width var(--transitionSpeed)
                       cubic-bezier(0.77, 0, 0.175, 1);
                   }
 
@@ -133,8 +133,8 @@ export default class Projects extends Component {
                     &::before {
                       width: 100%;
                       background: var(--accent);
-                      /*transition: width var(--transition_speed) ease;*/
-                      transition: width var(--transition_speed)
+                      /*transition: width var(--transitionSpeed) ease;*/
+                      transition: width var(--transitionSpeed)
                         cubic-bezier(0.77, 0, 0.175, 1);
                     }
 
@@ -150,7 +150,7 @@ export default class Projects extends Component {
                   }
 
                   & span {
-                    font: 700 0.625rem/30px var(--font_family_sans_serif);
+                    font: 700 0.625rem/30px var(--fontFamilySansSerif);
                     letter-spacing: 0.125rem;
                     color: var(--white);
                     text-transform: uppercase;
@@ -160,7 +160,7 @@ export default class Projects extends Component {
                     left: 10px;
                     z-index: 1;
                     transform: translateY(-42%);
-                    transition: all var(--transition_speed) ease;
+                    transition: all var(--transitionSpeed) ease;
                     opacity: 0;
                   }
                 }

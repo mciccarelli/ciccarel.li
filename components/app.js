@@ -9,7 +9,7 @@ export default ({ children }) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <main>
-      {children}
+      <div className="wrapper">{children}</div>
       <style jsx global>
         {GlobalCSS}
       </style>
@@ -19,10 +19,14 @@ export default ({ children }) => (
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          padding: 0 2rem;
           min-height: 100vh;
           position: relative;
           overflow: hidden;
+
+          & .wrapper {
+            align-self: stretch;
+            padding: 0 2rem;
+          }
         }
       `}</style>
     </main>

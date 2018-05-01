@@ -81,7 +81,7 @@ const Nav = ({ router: { pathname } }) => (
             height: 1px;
             position: absolute;
             content: '';
-            background: var(--dark_grey);
+            background: var(--darkGrey);
             filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
             opacity: 0;
             transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1),
