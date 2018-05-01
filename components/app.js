@@ -4,7 +4,7 @@ import GlobalCSS from '../styles'
 export default ({ children }) => (
   <div>
     <Head>
-      <title>michael ciccarelli: nyc based freelance web developer</title>
+      <title>michael ciccarelli: freelance web developer based in nyc</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>

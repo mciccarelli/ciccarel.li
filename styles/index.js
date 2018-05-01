@@ -54,7 +54,7 @@ export default css`
     --iterations: 1;
     --transition_speed: 400ms;
     --max_width: 960px;
-    --mobile-bp: 'min-width: 500px';
+    --mobile_bp: '(min-width: 500px)';
   }
 
   *,

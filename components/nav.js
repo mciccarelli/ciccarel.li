@@ -11,7 +11,7 @@ const socialLinks = [
 const menuItems = [
   { text: 'index', pathname: '/' },
   { text: 'projects', pathname: '/projects' },
-  { text: 'info', pathname: '/info' }
+  { text: 'profile', pathname: '/profile' }
 ]
 
 const Nav = ({ router: { pathname } }) => (
