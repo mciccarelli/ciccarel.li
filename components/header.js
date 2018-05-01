@@ -7,11 +7,16 @@ const Header = ({ router: { pathname } }) => (
     <Intro hide={pathname !== '/'} />
     <style jsx>{`
       .header {
-        padding: 5rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: right;
+        @media (min-width: 600px) {
+          padding: var(--gutterMedium);
+          position: absolute;
+          top: 0;
+          right: 0;
+          text-align: right;
+        }
+        @media (min-width: 800px) {
+          padding: var(--gutterLarge);
+        }
       }
     `}</style>
   </header>

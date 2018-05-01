@@ -84,18 +84,28 @@ export default () => (
             pointer-events: none;
             @media (min-width: 600px) {
               position: absolute;
-              max-width: 500px;
+              max-width: 300px;
+              opacity: 0.2;
               right: 0;
               top: 0;
+            }
+
+            @media (min-width: 1000px) {
+              max-width: 500px;
+              opacity: 0.5;
             }
           }
 
           &__text {
-            max-width: var(--maxWidth);
             & p {
-              max-width: var(--maxWidth);
-              padding-right: 425px;
               margin-bottom: 2rem;
+              @media (min-width: 600px) {
+                padding-right: 150px;
+              }
+
+              @media (min-width: 1000px) {
+                padding-right: 425px;
+              }
             }
           }
 
@@ -109,19 +119,6 @@ export default () => (
         }
 
         &__grid {
-          lost-center: var(--maxWidth);
-          position: relative;
-          width: 100%;
-
-          &__col {
-            lost-column: 1/2;
-
-            &:first-of-type {
-              padding-right: 2.5rem;
-              text-align: right;
-            }
-          }
-
           & h5 {
             color: var(--darkGrey);
           }
@@ -152,6 +149,23 @@ export default () => (
           & span {
             display: block;
             color: var(--darkGrey);
+          }
+        }
+
+        @media (min-width: 600px) {
+          &__grid {
+            lost-center: var(--maxWidth);
+            position: relative;
+            width: 100%;
+
+            &__col {
+              lost-column: 1/2;
+
+              &:first-of-type {
+                padding-right: 2.5rem;
+                text-align: right;
+              }
+            }
           }
         }
       }

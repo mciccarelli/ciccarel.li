@@ -25,7 +25,15 @@ export default ({ children }) => (
 
           & .wrapper {
             align-self: stretch;
-            padding: 0 2rem;
+            padding: 0 var(--gutterSmall) 8.25rem;
+            @media (min-width: 600px) {
+              padding: 0 var(--gutterMedium) 0;
+              /*padding: 0 15rem;*/
+            }
+            @media (min-width: 800px) {
+              /*padding: 0 var(--gutterLarge);*/
+              padding: 0 15rem 0;
+            }
           }
         }
       `}</style>

@@ -54,7 +54,9 @@ export default css`
     --iterations: 1;
     --transitionSpeed: 400ms;
     --maxWidth: 960px;
-    --mobileBp: '(min-width: 500px)';
+    --gutterSmall: 1.5rem;
+    --gutterMedium: 3rem;
+    --gutterLarge: 5rem;
   }
 
   *,

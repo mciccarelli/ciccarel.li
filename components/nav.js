@@ -52,7 +52,18 @@ const Nav = ({ router: { pathname } }) => (
         align-items: flex-end;
         justify-content: space-between;
         pointer-events: none;
-        padding: 5rem;
+        padding: var(--gutterSmall);
+        background: var(--black);
+        z-index: 1;
+
+        @media (min-width: 600px) {
+          background: none;
+          padding: var(--gutterMedium);
+        }
+
+        @media (min-width: 800px) {
+          padding: var(--gutterLarge);
+        }
 
         & ul {
           margin: 0;

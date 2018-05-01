@@ -88,60 +88,84 @@ export default class Projects extends Component {
                   top: 10px;
                   left: -40px;
                   color: var(--darkGrey);
+                  display: none;
+                  @media (min-width: 800px) {
+                    display: block;
+                  }
                 }
 
                 &__title {
-                  font: 700 4rem/1 var(--fontFamilySansSerif);
+                  font: 700 1.5rem/1 var(--fontFamilySansSerif);
                   text-transform: uppercase;
                   display: inline-block;
                   position: relative;
                   text-decoration: none;
                   transition: 0.4s;
 
+                  @media (min-width: 600px) {
+                    font-size: 2rem;
+                  }
+
+                  @media (min-width: 800px) {
+                    font-size: 3rem;
+                  }
+
+                  @media (min-width: 1000px) {
+                    font-size: 4rem;
+                  }
+
                   &::before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-40%);
-                    height: 30px;
-                    width: 0;
-                    transition: width 0s ease,
-                      background var(--transition_speed) ease;
+                    @media (min-width: 600px) {
+                      content: '';
+                      display: block;
+                      position: absolute;
+                      left: 0;
+                      top: 50%;
+                      transform: translateY(-40%);
+                      height: 30px;
+                      width: 0;
+                      transition: width 0s ease,
+                        background var(--transition_speed) ease;
+                    }
                   }
 
                   &::after {
-                    content: '';
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    right: 0;
-                    top: 50%;
-                    transform: translateY(-40%);
-                    height: 30px;
-                    width: 0;
-                    background: var(--accent);
-                    /*transition: width  var(--transitionSpeed) ease;*/
-                    transition: width var(--transitionSpeed)
-                      cubic-bezier(0.77, 0, 0.175, 1);
+                    @media (min-width: 600px) {
+                      content: '';
+                      content: '';
+                      display: block;
+                      position: absolute;
+                      right: 0;
+                      top: 50%;
+                      transform: translateY(-40%);
+                      height: 30px;
+                      width: 0;
+                      background: var(--accent);
+                      /*transition: width  var(--transitionSpeed) ease;*/
+                      transition: width var(--transitionSpeed)
+                        cubic-bezier(0.77, 0, 0.175, 1);
+                    }
                   }
 
                   &:hover {
                     color: var(--dark_grey);
 
                     &::before {
-                      width: 100%;
-                      background: var(--accent);
-                      /*transition: width var(--transitionSpeed) ease;*/
-                      transition: width var(--transitionSpeed)
-                        cubic-bezier(0.77, 0, 0.175, 1);
+                      @media (min-width: 600px) {
+                        width: 100%;
+                        background: var(--accent);
+                        /*transition: width var(--transitionSpeed) ease;*/
+                        transition: width var(--transitionSpeed)
+                          cubic-bezier(0.77, 0, 0.175, 1);
+                      }
                     }
 
                     &::after {
-                      width: 100%;
-                      background: transparent;
-                      transition: all 0s ease;
+                      @media (min-width: 600px) {
+                        width: 100%;
+                        background: transparent;
+                        transition: all 0s ease;
+                      }
                     }
 
                     & span {
@@ -150,18 +174,25 @@ export default class Projects extends Component {
                   }
 
                   & span {
-                    font: 700 0.625rem/30px var(--fontFamilySansSerif);
-                    letter-spacing: 0.125rem;
-                    color: var(--white);
-                    text-transform: uppercase;
+                    font: 600 0.625rem/1.75 var(--fontFamilySansSerif);
+                    color: var(--darkGrey);
+                    text-transform: none;
                     display: block;
-                    position: absolute;
-                    top: 50%;
-                    left: 10px;
-                    z-index: 1;
-                    transform: translateY(-42%);
-                    transition: all var(--transitionSpeed) ease;
-                    opacity: 0;
+                    @media (min-width: 600px) {
+                      white-space: nowrap;
+                      font-weight: 700;
+                      text-transform: uppercase;
+                      line-height: 30px;
+                      letter-spacing: 0.125rem;
+                      color: var(--white);
+                      position: absolute;
+                      top: 50%;
+                      left: 10px;
+                      z-index: 1;
+                      transform: translateY(-42%);
+                      transition: all var(--transitionSpeed) ease;
+                      opacity: 0;
+                    }
                   }
                 }
               }
@@ -169,6 +200,7 @@ export default class Projects extends Component {
 
             .details {
               padding: 5rem 0;
+              
             }
           }
         `}</style>

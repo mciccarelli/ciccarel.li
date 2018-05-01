@@ -13,8 +13,15 @@ export default () => (
         position: fixed;
         left: 0;
         top: 0;
-        padding: 5rem;
         transform: translateY(0.625rem);
+        padding: var(--gutterSmall);
+
+        @media (min-width: 600px) {
+          padding: var(--gutterMedium);
+        }
+        @media (min-width: 800px) {
+          padding: var(--gutterLarge);
+        }
       }
     `}</style>
   </div>

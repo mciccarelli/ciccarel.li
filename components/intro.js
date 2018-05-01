@@ -4,11 +4,15 @@ export default ({ hide }) => (
     brooklyn, new york.
     <style jsx>{`
       h1 {
-        max-width: 400px;
-        font-size: 1.375rem;
+        font-size: 1.125rem;
         font-weight: 200;
+        max-width: 400px;
         margin: 0;
         transition: opacity var(--transitionSpeed) ease-in-out;
+
+        @media (min-width: 600px) {
+          font-size: 1.375rem;
+        }
 
         &.hide {
           opacity: 0;
