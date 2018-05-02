@@ -2,8 +2,8 @@
   "alias": "ciccarel.li",
   "scale": {
     "sfo1": {
-      "min": 1,
-      "max": "1"
+      "min": 2,
+      "max": 2
     }
   }
 }
