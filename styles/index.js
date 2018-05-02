@@ -88,6 +88,14 @@ export default css`
     font: 400 0.875rem/1.5 var(--fontFamilyMono);
   }
 
+  p & a {
+    transition: border-color var(--transitionSpeed) ease;
+    border-bottom: 1px dotted var(--darkGrey);
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+
   h1,
   h2,
   h3,

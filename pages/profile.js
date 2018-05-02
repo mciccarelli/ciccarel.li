@@ -84,6 +84,7 @@ export default () => (
             pointer-events: none;
             @media (min-width: 600px) {
               position: absolute;
+              z-index: -1;
               max-width: 300px;
               opacity: 0.2;
               right: 0;
@@ -111,10 +112,6 @@ export default () => (
 
           & p {
             font: 400 1rem/1.75 var(--fontFamilySansSerif);
-          }
-
-          & a {
-            border-bottom: 1px dotted var(--darkGrey);
           }
         }
 

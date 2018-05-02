@@ -63,10 +63,6 @@ export default class Projects extends Component {
               text-transform: none;
               max-width: 570px;
               margin: 0;
-
-              & a {
-                border-bottom: 1px dotted var(--darkGrey);
-              }
             }
 
             .plist {
@@ -200,7 +196,6 @@ export default class Projects extends Component {
 
             .details {
               padding: 5rem 0;
-              
             }
           }
         `}</style>
