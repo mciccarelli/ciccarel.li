@@ -1,6 +1,3 @@
 module.exports = {
-  plugins: [
-    require('lost'),
-    require('postcss-nested')
-  ]
-}
+  plugins: [require('lost'), require('postcss-nested')],
+};

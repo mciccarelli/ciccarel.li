@@ -1,18 +1,21 @@
-import Head from 'next/head'
-import GlobalCSS from '../styles'
+import Head from 'next/head';
+import '../static/style.css';
 
 export default ({ children }) => (
   <div>
     <Head>
-      <title>michael ciccarelli: freelance web developer based in nyc</title>
+      <title>michael ciccarelli, freelance developer</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <main>
-      <div className="wrapper">{children}</div>
-      <style jsx global>
-        {GlobalCSS}
-      </style>
+      <div className="wrapper">
+        {children}
+        <aside>
+          <div>brooklyn &harr; new orleans</div>
+          {/* 29.94110040728807 -90.07188589546568 */}
+        </aside>
+      </div>
       <style jsx>{`
         main {
           display: flex;
@@ -35,8 +38,22 @@ export default ({ children }) => (
               padding: 0 15rem 0;
             }
           }
+          aside {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-100%);
+            display: none;
+            @media (min-width: 800px) {
+              display: block;
+            }
+            & div {
+              transform: rotate(-90deg);
+              transform-origin: center center;
+            }
+          }
         }
       `}</style>
     </main>
   </div>
-)
+);
