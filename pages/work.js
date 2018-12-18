@@ -36,12 +36,12 @@ export default class Work extends Component {
         </ol>
         <div className="details">
           <p>
-            * Projects listed in reverse chronological order from 2012 - 2018.
-            In most cases, I would have filled the role of a front-end developer
-            but am used to wearing many hats both while freelancing, as well as
-            working on my own self-initiated projects. If you'd like to learn
-            more or to discuss a project,{' '}
-            <a href="mailto:m@ciccarel.li">drop me an email</a> and I'll get
+            * various projects listed in reverse chronological order from 2012 -
+            2019. in most cases, i filled the role of front-end developer but am
+            used to wearing many hats both while freelancing, as well as working
+            on my own self-initiated projects. if you'd like to learn more or to
+            discuss a project,{' '}
+            <a href="mailto:m@ciccarel.li">send me an email</a> and i'll get
             back to you as soon as possible.
           </p>
         </div>

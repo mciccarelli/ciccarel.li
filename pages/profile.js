@@ -70,6 +70,7 @@ export default () => (
     </div>
     <style jsx>{`
       .profile {
+        user-select: text;
         &__overview {
           lost-center: var(--maxWidth);
           position: relative;
