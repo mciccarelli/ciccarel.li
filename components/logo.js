@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import LogoSVG from '../static/logo.svg'
+import Link from 'next/link';
 
 export default () => (
   <div className="logo">
     <Link href="/">
       <a>
-        <LogoSVG />
+        <img src="/static/logo.svg" />
       </a>
     </Link>
     <style jsx>{`
@@ -25,4 +24,4 @@ export default () => (
       }
     `}</style>
   </div>
-)
+);

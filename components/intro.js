@@ -1,21 +1,25 @@
 export default ({ hide }) => (
-  <h1 className={`${hide ? 'hide' : ''}`}>
-    hi, i'm michael ciccarelli, a freelance <span>web developer</span> based in
-    brooklyn, new york.
+  <div className={`intro ${hide ? 'hide' : ''}`}>
+    <h1>
+      michael ciccarelli is a freelance <span>developer</span> based in new
+      orleans
+    </h1>
     <style jsx>{`
-      h1 {
-        font-size: 1.125rem;
-        font-weight: 200;
+      .intro {
         max-width: 400px;
-        margin: 0;
         transition: opacity var(--transitionSpeed) ease-in-out;
-
-        @media (min-width: 600px) {
-          font-size: 1.375rem;
-        }
 
         &.hide {
           opacity: 0;
+        }
+      }
+      h1 {
+        font-size: 1.125rem;
+        font-weight: 200;
+        margin: 0;
+
+        @media (min-width: 600px) {
+          font-size: 1.375rem;
         }
 
         & span {
@@ -23,5 +27,5 @@ export default ({ hide }) => (
         }
       }
     `}</style>
-  </h1>
-)
+  </div>
+);

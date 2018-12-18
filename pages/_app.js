@@ -1,11 +1,11 @@
-import App, { Container } from 'next/app'
-import React from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { Layout } from '../components'
+import React from 'react';
+import App, { Container } from 'next/app';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Layout } from '../components';
 
 export default class CustomApp extends App {
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps } = this.props;
     return (
       <Container>
         <Layout>
@@ -35,6 +35,6 @@ export default class CustomApp extends App {
           }
         `}</style>
       </Container>
-    )
+    );
   }
 }

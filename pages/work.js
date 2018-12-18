@@ -1,23 +1,23 @@
-import { Component } from 'react'
-import projects from '../static/projects.json'
+import { Component } from 'react';
+import projects from '../static/projects.json';
 
 // formating numbers
 // ex: turn 1, 2 into 01, 02
 const padNumber = (num, size) => {
-  let s = num + ''
-  while (s.length < size) s = '0' + s
-  return s
-}
+  let s = num + '';
+  while (s.length < size) s = '0' + s;
+  return s;
+};
 
-export default class Projects extends Component {
+export default class Work extends Component {
   static async getInitialProps({ pathname }) {
-    const projectList = await projects.data.slice().reverse()
-    return { pathname, projectList }
+    const projectList = await projects.data.slice().reverse();
+    return { pathname, projectList };
   }
 
   render() {
-    const { projectList } = this.props
-    if (!projectList || projectList.length < 1) return <p>loading...</p>
+    const { projectList } = this.props;
+    if (!projectList || projectList.length < 1) return <p>loading...</p>;
     return (
       <section>
         <h5>Projects</h5>
@@ -200,6 +200,6 @@ export default class Projects extends Component {
           }
         `}</style>
       </section>
-    )
+    );
   }
 }

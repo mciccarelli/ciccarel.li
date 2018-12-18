@@ -1,18 +1,18 @@
-import Link from 'next/link'
-import { withRouter } from 'next/router'
+import Link from 'next/link';
+import { withRouter } from 'next/router';
 
 const socialLinks = [
   { text: 'twitter', url: 'https://twitter.com/mciccarelli' },
   { text: 'linkedin', url: 'http://linkedin.com/in/mciccarelli' },
   { text: 'instagram', url: 'http://instagram.com/minorvillain' },
-  { text: 'github', url: 'https://github.com/mciccarelli' }
-]
+  { text: 'github', url: 'https://github.com/mciccarelli' },
+];
 
 const menuItems = [
   { text: 'index', pathname: '/' },
-  { text: 'projects', pathname: '/projects' },
-  { text: 'profile', pathname: '/profile' }
-]
+  { text: 'work', pathname: '/work' },
+  { text: 'profile', pathname: '/profile' },
+];
 
 const Nav = ({ router: { pathname } }) => (
   <nav className="nav">
@@ -53,7 +53,7 @@ const Nav = ({ router: { pathname } }) => (
         justify-content: space-between;
         pointer-events: none;
         padding: var(--gutterSmall);
-        background: var(--black);
+        background: var(--white);
         z-index: 1;
 
         @media (min-width: 600px) {
@@ -81,7 +81,7 @@ const Nav = ({ router: { pathname } }) => (
           position: relative;
           text-decoration: none;
           text-transform: uppercase;
-          color: var(--white);
+          color: var(--black);
           pointer-events: all;
 
           &:after {
@@ -129,6 +129,6 @@ const Nav = ({ router: { pathname } }) => (
       }
     `}</style>
   </nav>
-)
+);
 
-export default withRouter(Nav)
+export default withRouter(Nav);

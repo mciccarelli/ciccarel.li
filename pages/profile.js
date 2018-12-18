@@ -1,4 +1,4 @@
-import { Intro } from '../components'
+import { Intro } from '../components';
 
 export default () => (
   <section className="profile">
@@ -8,24 +8,25 @@ export default () => (
         <Intro />
         <p>
           Over the past 10+ years, I've worked with startups, creative agencies,
-          and global media companies, focusing on front-end web development;
-          building, prototyping and implementing user interfaces that are usable
-          and scalable for any web-based platform.
+          and global media companies, with a focus on front-end web development;
+          building, prototyping and implementing custom user interfaces &amp;
+          experiences that are usable and scalable for any web-based platform.
         </p>
         <p>
-          Whenever I'm not busy with client work, I will{' '}
+          Whenever I'm not busy with client work, I like to{' '}
           <a href="https://github.com/mciccarelli" target="_blank">
             experiment
           </a>{' '}
-          with new technologies on my own self-initiated projects. I also play
-          poker, collect sneakers, share thoughts on{' '}
+          with new technologies. I also like to play poker, travel, collect
+          sneakers, share thoughts on{' '}
           <a href="https://twitter.com/mciccarelli" target="_blank">
             Twitter
           </a>{' '}
           and photos on{' '}
           <a href="http://instagram.com/minorvillain" target="_blank">
             Instagram
-          </a>.
+          </a>
+          .
         </p>
       </div>
     </div>
@@ -46,26 +47,24 @@ export default () => (
             <span>Front-end Web Developer</span>
           </li>
           <li>
-            Consultant (2008 - today)
+            Consultant (2008 - )
             <span>Creative Technology &amp; Web Development</span>
           </li>
         </ul>
       </div>
       <div className="profile__grid__col">
-        <h5>Tools I use most often</h5>
+        <h5>Technologies I use most often</h5>
         <p>
-          JavaScript, ES6, Node, React, Redux, React Native, Vue, Angular,
-          TypeScript, Webpack, Browserify, REST API, GraphQL, Styled Components,
-          HTML/CSS, JSX, PostCSS, Sketch, Gatsby.js, Next.js, Contentful,
-          WordPress, Docker, Python, PHP, MySQL, PostgreSQL, SQLite, MongoDB,
-          D3.js, Highcharts.js, Firebase, Netlify, AWS, macOS &amp; iOS.
+          JavaScript, Node, React, React Native, Vue, TypeScript, Webpack,
+          RESTful APIs, GraphQL, HTML/CSS, Sketch, Next.js, Contentful,
+          WordPress, Docker, Python, PHP, MySQL, PostgreSQL, MongoDB, D3.js,
+          Highcharts.js, Firebase, Netlify, AWS, macOS &amp; iOS.
         </p>
         <h5>Brands I've worked with</h5>
         <p>
-          VICE, Viceland, Conde Nast, HBO, Grey, Fyre, Cannon, Kraft, Wired,
-          Enigma, Style.com, BMW, M2M, Sonos, Converse, Wall Street Journal, Dow
-          Jones, HuffPost, Knoll, FilzFelt, Pentagram, Live Nation, Elephant,
-          Huge.
+          VICE, Condé Nast, HBO, Grey, Cannon, Wired, Enigma, Style.com, BMW,
+          M2M, Sonos, Converse, Wall Street Journal, Dow Jones, HuffPost, Knoll,
+          FilzFelt, Pentagram, Live Nation, Elephant, Huge.
         </p>
       </div>
     </div>
@@ -78,7 +77,7 @@ export default () => (
           margin-bottom: 1.5rem;
 
           &__img {
-            opacity: 0.5;
+            opacity: 0.2;
             max-width: 100%;
             margin-bottom: 1rem;
             pointer-events: none;
@@ -123,7 +122,7 @@ export default () => (
           & p {
             font: 400 0.875rem/1.5 var(--fontFamilySansSerif);
             color: var(--darkGrey);
-            margin: 0 0 1.25rem;
+            margin: 0 0 2.2rem;
           }
         }
 
@@ -168,4 +167,4 @@ export default () => (
       }
     `}</style>
   </section>
-)
+);
