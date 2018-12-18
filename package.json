@@ -16,8 +16,5 @@
     "react-transition-group": "^2.5.1",
     "styled-jsx": "^3.1.2",
     "styled-jsx-plugin-postcss": "2.0.0"
-  },
-  "devDependencies": {
-    "babel-plugin-inline-react-svg": "^1.0.1"
   }
 }
