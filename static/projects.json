@@ -125,6 +125,13 @@
     },
     {
       "id": 0,
+      "title": "Pizza Rita",
+      "client": "Wet Cement",
+      "info": "React, Node, Contentful CMS",
+      "url": "http://pizzarita.org/"
+    },
+    {
+      "id": 0,
       "title": "Common Living",
       "client": "Common Living",
       "info": "Next.js universal app, Node, Contentful CMS",
