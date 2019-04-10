@@ -12,7 +12,9 @@ export default ({ children }) => (
       <div className="wrapper">
         {children}
         <aside>
-          <div>brooklyn &harr; nola</div>
+          <div>
+            brooklyn <span>&harr;</span> nola
+          </div>
           {/* <div>29.94110040728807, -90.07188589546568</div> */}
         </aside>
       </div>
@@ -41,7 +43,7 @@ export default ({ children }) => (
             position: fixed;
             top: 50%;
             left: var(--gutterLarge);
-            transform: translateY(-50%);
+            transform: translate(-5%, -50%);
             font: 400 0.875rem/1.5 var(--fontFamilyMono);
             text-transform: uppercase;
             display: none;
@@ -51,6 +53,10 @@ export default ({ children }) => (
             & div {
               transform: rotate(-90deg);
               transform-origin: top left;
+            }
+            & span {
+              transform: translateY(-1.5px);
+              display: inline-flex;
             }
           }
         }
