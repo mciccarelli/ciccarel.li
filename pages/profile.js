@@ -7,31 +7,19 @@ export default () => (
       <div className="profile__overview__text">
         <Intro />
         <p>
-          I work with startups, creative agencies, and other teams, most often
-          focusing on front-end web development; building, prototyping and
-          implementing custom apps &amp; user interfaces, architecture,
-          cloud-based hosting, as well as consulting on other improvements and
-          workflows that I've picked up throughout my 15 years in developing
-          software for the web.
+          I work with startups, creative agencies, and global media companies,
+          focusing on front-end development; building, prototyping and designing
+          custom apps &amp; user interfaces, defining technical architecture and
+          cloud-based infrastructures, as well as consulting on other
+          improvements and workflows that I've picked up throughout my 10+ years
+          in building software for the web.
         </p>
         <p>
-          Currently accepting freelance work for 2019.
+          Currently accepting freelance projects for 2019.
           <br />
-          To inquire about a project, please send me{' '}
-          <a href="mailto:m@ciccarel.li">an email</a>.
-        </p>
-        {/* <p>
-          Whenever I'm not working, I like to play poker, travel, share thoughts
-          on{` `}
-          <a href="https://twitter.com/mciccarelli" target="_blank">
-            Twitter
-          </a>{' '}
-          and photos on{' '}
-          <a href="http://instagram.com/minorvillain" target="_blank">
-            Instagram
-          </a>
+          To inquire, please send me <a href="mailto:m@ciccarel.li">an email</a>
           .
-        </p> */}
+        </p>
       </div>
     </div>
     <div className="profile__grid">
@@ -59,10 +47,10 @@ export default () => (
       <div className="profile__grid__col">
         <h5>Technologies I use most often</h5>
         <p>
-          JavaScript, Node, React, React Native, Vue, TypeScript, Webpack,
-          GraphQL, HTML/CSS, Sketch, Next.js, Contentful, WordPress, Docker,
-          Python, PHP, MySQL, PostgreSQL, MongoDB, D3.js, Highcharts.js,
-          Firebase, Netlify, AWS, macOS &amp; iOS.
+          JavaScript, Node, React, Vue, TypeScript, Webpack, REST APIs, GraphQL,
+          HTML/CSS, Sketch, Next.js, Contentful, Docker, Python, PHP, MySQL,
+          PostgreSQL, MongoDB, D3, Highcharts, Firebase, Netlify, AWS, macOS
+          &amp; iOS.
         </p>
         <h5>Brands I've worked with</h5>
         <p>

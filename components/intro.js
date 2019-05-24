@@ -1,9 +1,8 @@
 export default ({ hide }) => (
   <div className={`intro ${hide ? 'hide' : ''}`}>
     <h1>
-      michael ciccarelli is a <span>freelance developer</span>
-      {` `}
-      based in new orleans
+      michael ciccarelli is a <span>software engineer</span> and independent
+      technology consultant.
     </h1>
     <style jsx>{`
       .intro {
