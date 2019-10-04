@@ -7,12 +7,15 @@ export default () => (
       <div className="profile__overview__text">
         <Intro />
         <p>
-          I work with startups, creative agencies, and global media companies,
-          focusing on front-end development; building, prototyping and designing
-          custom apps &amp; user interfaces, defining technical architecture and
-          cloud-based infrastructures, as well as consulting on other
-          improvements and workflows that I've picked up throughout my 10+ years
-          in building software for the web.
+          My name is michael ciccarelli, I'm a software engineer who has been
+          working in tech and building software for over a decade now.
+        </p>
+        <p>
+          I've worked with startups, creative agencies, media companies, and
+          global brands, providing technical services from building custom apps &amp;
+          user interfaces, to setting up application architecture, hosting,
+          cloud-based infrastructures, to product team methodologies and
+          workflows.
         </p>
         <p>
           Currently accepting freelance projects for 2019.
@@ -27,7 +30,7 @@ export default () => (
         <h5>Timeline</h5>
         <ul>
           <li>
-            VICE Media (2014 - 2017)
+            VICE (2014 - 2017)
             <span>Lead Front-end Engineer</span>
           </li>
           <li>
@@ -40,23 +43,22 @@ export default () => (
           </li>
           <li>
             Consultant (2008 - )
-            <span>Creative Technology &amp; Web Development</span>
+            <span>Software Development &amp; Creative Technology</span>
           </li>
         </ul>
       </div>
       <div className="profile__grid__col">
         <h5>Technologies I use most often</h5>
         <p>
-          JavaScript, Node, React, Vue, TypeScript, Webpack, REST APIs, GraphQL,
-          HTML/CSS, Sketch, Next.js, Contentful, Docker, Python, PHP, MySQL,
-          PostgreSQL, MongoDB, D3, Highcharts, Firebase, Netlify, AWS, macOS
-          &amp; iOS.
+          JavaScript, Node, React, Vue, Webpack, REST, GraphQL, HTML/CSS,
+          Contentful, Docker, PHP, MySQL, PostgreSQL, D3.js, AWS, macOS &amp;
+          iOS.
         </p>
         <h5>Brands I've worked with</h5>
         <p>
           VICE, Condé Nast, HBO, Grey, Cannon, Wired, Enigma, Style.com, BMW,
           M2M, Sonos, Converse, Wall Street Journal, Dow Jones, HuffPost, Knoll,
-          FilzFelt, Pentagram, Live Nation, Elephant, Huge.
+          Pentagram, Live Nation, Huge.
         </p>
       </div>
     </div>

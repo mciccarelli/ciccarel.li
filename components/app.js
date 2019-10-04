@@ -4,16 +4,21 @@ import '../static/style.css';
 export default ({ children }) => (
   <div>
     <Head>
-      <title>michael ciccarelli, freelance developer</title>
       <meta charSet="utf-8" />
+      {/* <link rel="icon" href="/static/favicon.ico" /> */}
+      <meta
+        name="description"
+        content="michael ciccarelli is a software engineer, web/ui designer, and independant technology consultant based in miami, florida."
+      />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <title>ciccarel.li</title>
     </Head>
     <main>
       <div className="wrapper">
         {children}
         <aside>
-          <div>29° 56' 27.961" N, 90° 4' 18.789" W</div>
-          {/* <div>29.94110040728807, -90.07188589546568</div> */}
+          <div>25° 47' 30.2208" N, 80° 11' 35.754" W</div>
+          {/* <div>29° 56' 27.961" N, 90° 4' 18.789" W</div> */}
         </aside>
       </div>
       <style jsx>{`

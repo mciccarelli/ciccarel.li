@@ -1,12 +1,12 @@
 export default ({ hide }) => (
   <div className={`intro ${hide ? 'hide' : ''}`}>
     <h1>
-      michael ciccarelli is a <span>software engineer</span> and independent
-      technology consultant.
+      software engineer, creative technologist specialized in web + user
+      interface design
     </h1>
     <style jsx>{`
       .intro {
-        max-width: 400px;
+        max-width: 420px;
         transition: opacity var(--transitionSpeed) ease-in-out;
 
         &.hide {
