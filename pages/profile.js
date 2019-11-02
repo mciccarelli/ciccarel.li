@@ -7,20 +7,20 @@ export default () => (
       <div className="profile__overview__text">
         <Intro />
         <p>
-          My name is michael ciccarelli, I'm a software engineer who has been
-          working in tech and building software for over a decade now.
+          I am a creative technologist who has been
+          building software and custom user experiences for 20+ years.
         </p>
         <p>
-          I've worked with startups, creative agencies, media companies, and
-          global brands, providing technical services from building custom apps &amp;
+          I've held various staff engineering roles, as well as worked as a consultant with startups, 
+          creative agencies, media companies, and global brands. Providing technical services from building custom apps &amp;
           user interfaces, to setting up application architecture, hosting,
           cloud-based infrastructures, to product team methodologies and
           workflows.
         </p>
         <p>
-          Currently accepting freelance projects for 2019.
+          Now, I work as remote contractor, focusing on full-stack (javascript) web application development and UI/UX design.
           <br />
-          To inquire, please send me <a href="mailto:m@ciccarel.li">an email</a>
+          To inquire about a project, please send me <a href="mailto:m@ciccarel.li">an email</a>
           .
         </p>
       </div>
@@ -31,7 +31,7 @@ export default () => (
         <ul>
           <li>
             VICE (2014 - 2017)
-            <span>Lead Front-end Engineer</span>
+            <span>Lead Engineer</span>
           </li>
           <li>
             Grey Group (2013 - 2014)
@@ -42,22 +42,21 @@ export default () => (
             <span>Front-end Web Developer</span>
           </li>
           <li>
-            Consultant (2008 - )
-            <span>Software Development &amp; Creative Technology</span>
+            Freelance (2008 - )
+            <span>Web application development</span>
           </li>
         </ul>
       </div>
       <div className="profile__grid__col">
         <h5>Technologies I use most often</h5>
         <p>
-          JavaScript, Node, React, Vue, Webpack, REST, GraphQL, HTML/CSS,
-          Contentful, Docker, PHP, MySQL, PostgreSQL, D3.js, AWS, macOS &amp;
-          iOS.
+          JavaScript, Node, React, Vue, REST, GraphQL, HTML/CSS, Framer X + Framer Motion, Sketch,
+          Contentful, Docker, D3.js, AWS, macOS &amp; iOS.
         </p>
         <h5>Brands I've worked with</h5>
         <p>
           VICE, Condé Nast, HBO, Grey, Cannon, Wired, Enigma, Style.com, BMW,
-          M2M, Sonos, Converse, Wall Street Journal, Dow Jones, HuffPost, Knoll,
+          M2M, Sonos, Converse, Wall Street Journal, Common, Dow Jones, HuffPost, Knoll,
           Pentagram, Live Nation, Huge.
         </p>
       </div>
