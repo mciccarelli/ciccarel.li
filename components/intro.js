@@ -1,8 +1,7 @@
 export default ({ hide }) => (
   <div className={`intro ${hide ? 'hide' : ''}`}>
     <h1>
-      software engineer, creative technologist specialized in web + user
-      interface design
+      michael ciccarelli — freelance developer based in miami
     </h1>
     <style jsx>{`
       .intro {
@@ -19,7 +18,7 @@ export default ({ hide }) => (
         margin: 0;
 
         @media (min-width: 600px) {
-          font-size: 1.375rem;
+          font-size: 1.5rem;
         }
 
         & span {
