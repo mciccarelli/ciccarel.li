@@ -1,131 +1,81 @@
 import Link from 'next/link';
 import { withRouter } from 'next/router';
+import cx from 'classnames';
 
-const socialLinks = [
-  { text: 'twitter', url: 'https://twitter.com/mciccarelli' },
-  { text: 'linkedin', url: 'http://linkedin.com/in/mciccarelli' },
-  { text: 'instagram', url: 'http://instagram.com/minorvillain' },
-  { text: 'github', url: 'https://github.com/mciccarelli' },
-];
-
-const menuItems = [
-  { text: 'index', pathname: '/' },
-  { text: 'work', pathname: '/work' },
-  { text: 'profile', pathname: '/profile' },
-];
-
-const Nav = ({ router: { pathname } }) => (
+const Nav = ({ router }) => (
   <nav className="nav">
-    <ul className="nav__social">
-      {socialLinks.map((item, index) => (
-        <li key={`social-link-${index}`}>
-          <a href={item.url} target="_blank">
-            {item.text}
-          </a>
-        </li>
-      ))}
-    </ul>
-    <ul className="nav__menu">
-      {menuItems.map((item, index) => (
-        <li key={`menu-item-${index}`}>
-          <Link prefetch href={item.pathname}>
-            <a className={pathname === item.pathname ? 'active' : ''}>
-              {item.text}
+    <div className="flex justify-end md:justify-between items-center p-10 lg:p-16">
+      <Link href="/">
+        <a className="font-display text-sm border-0 invisible md:visible">
+          <span>M.Ciccarelli</span>
+        </a>
+      </Link>
+
+      <ul className="flex">
+        <li className="mr-8 lg:mr-16">
+          <Link href="/">
+            <a className={cx({ active: router.pathname === '/' })}>
+              <span>Info</span>
             </a>
           </Link>
         </li>
-      ))}
-      <li>
-        <a href="mailto:m@ciccarel.li" className="email">
-          contact
-        </a>
-      </li>
-    </ul>
+        <li className="mr-8 lg:mr-16">
+          <Link href="/projects">
+            <a className={cx({ active: router.pathname === '/projects' })}>
+              <span>Projects</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact">
+            <a className={cx({ active: router.pathname === '/contact' })}>
+              <span>Contact</span>
+            </a>
+          </Link>
+        </li>
+      </ul>
+    </div>
     <style jsx>{`
       .nav {
         position: fixed;
-        bottom: 0;
         left: 0;
-        right: 0;
+        top: 0;
+        z-index: 99;
         width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        pointer-events: none;
-        padding: var(--gutterSmall);
-        background: var(--white);
-        z-index: 1;
+      }
 
-        @media (min-width: 600px) {
-          background: none;
-          padding: var(--gutterMedium);
-        }
+      li {
+        @apply .text-xs .font-body .font-bold .uppercase .tracking-wider;
+      }
 
-        @media (min-width: 800px) {
-          padding: var(--gutterLarge);
-        }
+      li a {
+        color: themes('colors.black');
+        border: 0;
+      }
 
-        & ul {
-          margin: 0;
-          padding: 0;
-          list-style-type: none;
-          max-width: 250px;
-        }
+      li a span {
+        position: relative;
+      }
 
-        &__menu {
-          text-align: right;
-        }
+      li a span::after {
+        position: absolute;
+        transition: background-color 0.2s ease-in-out 0.15s,
+          height 0.2s ease-in-out 0.15s;
+        z-index: -1;
+        content: '';
+        left: -2px;
+        bottom: 1px;
+        width: calc(100% + 4px);
+        height: 0;
+        background-color: transparent;
+      }
 
-        a {
-          display: inline-block;
-          position: relative;
-          text-decoration: none;
-          text-transform: uppercase;
-          color: var(--black);
-          pointer-events: all;
-
-          &:after {
-            display: block;
-            bottom: 2px;
-            left: 0;
-            width: 1px;
-            height: 1px;
-            position: absolute;
-            content: '';
-            background: var(--darkGrey);
-            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-            opacity: 0;
-            transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1),
-              opacity 0.1s linear 0.3s;
-          }
-
-          &:hover,
-          &:active {
-            &:after {
-              width: 100%;
-              opacity: 1;
-              filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
-              transition-delay: 0s;
-            }
-          }
-
-          &.active::before {
-            display: inline-block;
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -10px;
-            height: 4px;
-            width: 4px;
-            transform: translateY(-60%);
-            background-color: var(--accent);
-            border-radius: 50%;
-          }
-
-          &.email {
-            color: var(--accent);
-          }
-        }
+      li a:hover span::after,
+      li a:focus span::after,
+      li a:active span::after,
+      li a.active span::after {
+        height: 6px;
+        background-color: theme('colors.highlighter');
       }
     `}</style>
   </nav>

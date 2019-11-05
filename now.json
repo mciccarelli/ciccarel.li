@@ -1,10 +1,7 @@
 {
-  "version": 1,
-  "alias": "ciccarel.li",
-  "scale": {
-    "sfo1": {
-      "min": 2,
-      "max": 2
-    }
-  }
+  "scope": "ciccarelli",
+  "alias": [
+    "ciccarel.li",
+    "ciccarelli"
+  ]
 }

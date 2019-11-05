@@ -1,27 +1,13 @@
-import Link from 'next/link';
+const Logo = () => {
+  return (
+    <svg width="114" height="34" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M103 26h3V8h-3v18zm-7 0h-2.545v-9h-8.91v9H82V8h2.545v6.429h8.91V8H96v18zM75 10.571H63.545v3.858H75a11.584 11.584 0 0 1-4.254 9 11.334 11.334 0 0 1-7.2 2.571H61v-2.571h2.545c4.036 0 7.446-2.711 8.54-6.429H61v-2.571h.082L61 14.265V8h14v2.571zM53 26h-2.545V10.571c-4.921 0-8.91 4.03-8.91 9V26H39V8h2.545v4.298C43.645 9.676 46.856 8 50.455 8H53v18zm-24 0h3V8h-3v18zm-9.545 0c0-4.185-2.828-7.703-6.658-8.71a8.846 8.846 0 0 0-2.252-.29v9H8V8h2.545v6.429a11.364 11.364 0 0 1 4.264.828C19.024 16.965 22 21.13 22 26h-2.545zm-.568-18H23l-6.007 5c-.948-.39-1.95-.704-2.993-.932L18.887 8zM0 0v34h114V0H0z"
+        fill="#ffffff"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
 
-export default () => (
-  <div className="logo">
-    <Link href="/">
-      <a>
-        <img src="/static/logo.svg" />
-      </a>
-    </Link>
-    <style jsx>{`
-      .logo {
-        position: fixed;
-        left: 0;
-        top: 0;
-        transform: translateY(0.625rem);
-        padding: var(--gutterSmall);
-
-        @media (min-width: 600px) {
-          padding: var(--gutterMedium);
-        }
-        @media (min-width: 800px) {
-          padding: var(--gutterLarge);
-        }
-      }
-    `}</style>
-  </div>
-);
+export default Logo;
