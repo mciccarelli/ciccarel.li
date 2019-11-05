@@ -1,10 +1,16 @@
 {
-  "version": 1,
-  "alias": "ciccarel.li",
-  "scale": {
-    "sfo1": {
-      "min": 2,
-      "max": 2
+  "scope": "ciccarelli",
+  "alias": [
+    "ciccarel.li"
+  ],
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    },
+    {
+      "src": "/static/*",
+      "use": "@now/static"
     }
-  }
+  ]
 }

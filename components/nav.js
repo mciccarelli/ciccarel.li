@@ -1,134 +1,69 @@
-import Link from 'next/link';
-import { withRouter } from 'next/router';
-
-const socialLinks = [
-  { text: 'twitter', url: 'https://twitter.com/mciccarelli' },
-  { text: 'linkedin', url: 'http://linkedin.com/in/mciccarelli' },
-  { text: 'instagram', url: 'http://instagram.com/minorvillain' },
-  { text: 'github', url: 'https://github.com/mciccarelli' },
-];
-
-const menuItems = [
-  { text: 'index', pathname: '/' },
-  { text: 'work', pathname: '/work' },
-  { text: 'profile', pathname: '/profile' },
-];
-
-const Nav = ({ router: { pathname } }) => (
-  <nav className="nav">
-    <ul className="nav__social">
-      {socialLinks.map((item, index) => (
-        <li key={`social-link-${index}`}>
-          <a href={item.url} target="_blank">
-            {item.text}
-          </a>
-        </li>
-      ))}
-    </ul>
-    <ul className="nav__menu">
-      {menuItems.map((item, index) => (
-        <li key={`menu-item-${index}`}>
-          <Link prefetch href={item.pathname}>
-            <a className={pathname === item.pathname ? 'active' : ''}>
-              {item.text}
+const Nav = () => {
+  return (
+    <nav className="nav">
+      <div className="flex justify-end items-center p-10 lg:p-16">
+        <ul className="flex">
+          <li className="mr-8 lg:mr-16">
+            <a href="#">
+              <span>Info</span>
             </a>
-          </Link>
-        </li>
-      ))}
-      <li>
-        <a href="mailto:m@ciccarel.li" className="email">
-          contact
-        </a>
-      </li>
-    </ul>
-    <style jsx>{`
-      .nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        pointer-events: none;
-        padding: var(--gutterSmall);
-        background: var(--white);
-        z-index: 1;
-
-        @media (min-width: 600px) {
-          background: none;
-          padding: var(--gutterMedium);
+          </li>
+          <li className="mr-8 lg:mr-16">
+            <a href="#">
+              <span>Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <style jsx>{`
+        .nav {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99;
+          width: 100%;
         }
 
-        @media (min-width: 800px) {
-          padding: var(--gutterLarge);
-        }
-
-        & ul {
-          margin: 0;
-          padding: 0;
-          list-style-type: none;
-          max-width: 250px;
-        }
-
-        &__menu {
-          text-align: right;
+        li {
+          @apply .text-xs .font-display .font-bold .uppercase .tracking-wider;
         }
 
         a {
-          display: inline-block;
-          position: relative;
-          text-decoration: none;
-          text-transform: uppercase;
-          color: var(--black);
-          pointer-events: all;
-
-          &:after {
-            display: block;
-            bottom: 2px;
-            left: 0;
-            width: 1px;
-            height: 1px;
-            position: absolute;
-            content: '';
-            background: var(--darkGrey);
-            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-            opacity: 0;
-            transition: width 0.3s cubic-bezier(0.77, 0, 0.175, 1),
-              opacity 0.1s linear 0.3s;
-          }
-
-          &:hover,
-          &:active {
-            &:after {
-              width: 100%;
-              opacity: 1;
-              filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
-              transition-delay: 0s;
-            }
-          }
-
-          &.active::before {
-            display: inline-block;
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -10px;
-            height: 4px;
-            width: 4px;
-            transform: translateY(-60%);
-            background-color: var(--accent);
-            border-radius: 50%;
-          }
-
-          &.email {
-            color: var(--accent);
-          }
+          @apply .text-grey-light;
+          border: 0;
         }
-      }
-    `}</style>
-  </nav>
-);
 
-export default withRouter(Nav);
+        /*a span {
+          position: relative;
+        }
+
+        a span::after {
+          position: absolute;
+          transition: background-color 0.2s ease-in-out 0.15s,
+            height 0.2s ease-in-out 0.15s;
+          z-index: -1;
+          content: '';
+          left: -2px;
+          bottom: 1px;
+          width: calc(100% + 4px);
+          height: 0;
+          background-color: transparent;
+        }
+
+        a:hover span::after,
+        a:focus span::after,
+        a:active span::after {
+          height: 6px;
+          background-color: theme('colors.highlighter');
+        }*/
+      `}</style>
+    </nav>
+  );
+};
+
+export default Nav;

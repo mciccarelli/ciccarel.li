@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>logo</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="logo" fill="#0D0900" fill-rule="nonzero">
-            <path d="M31.99,32 L0.009,32 L0.009,0 L31.989,0 L26.117,6.01 L5.906,6.01 L5.906,25.99 L26.118,25.99 L31.99,32 Z M1.009,31 L29.614,31 L25.695,26.99 L4.906,26.99 L4.906,5.01 L25.696,5.01 L29.615,1 L1.009,1 L1.009,31 Z" id="Shape"></path>
-            <g id="Group">
-                <polygon id="Shape" points="30.803 31.5 0.51 31.5 0.51 0.5 30.803 0.5 25.907 5.51 5.406 5.51 5.406 26.49 25.907 26.49"></polygon>
-                <path d="M31.99,32 L0.009,32 L0.009,0 L31.989,0 L26.117,6.01 L5.906,6.01 L5.906,25.99 L26.118,25.99 L31.99,32 Z M1.009,31 L29.614,31 L25.695,26.99 L4.906,26.99 L4.906,5.01 L25.696,5.01 L29.615,1 L1.009,1 L1.009,31 Z" id="Shape"></path>
-            </g>
-            <polygon id="Shape" points="31.635 32 0.365 32 0.365 0 31.635 0 26.581 5.172 5.419 5.172 5.419 26.829 26.582 26.829"></polygon>
-            <polygon id="Shape" points="26.581 5.172 31.635 0 0.365 0 0.365 32 31.635 32 26.581 26.828 5.419 26.828 5.419 5.172"></polygon>
-        </g>
-    </g>
-</svg>
+<svg width="114" height="34" xmlns="http://www.w3.org/2000/svg"><path d="M103 26h3V8h-3v18zm-7 0h-2.545v-9h-8.91v9H82V8h2.545v6.429h8.91V8H96v18zM75 10.571H63.545v3.858H75a11.584 11.584 0 0 1-4.254 9 11.334 11.334 0 0 1-7.2 2.571H61v-2.571h2.545c4.036 0 7.446-2.711 8.54-6.429H61v-2.571h.082L61 14.265V8h14v2.571zM53 26h-2.545V10.571c-4.921 0-8.91 4.03-8.91 9V26H39V8h2.545v4.298C43.645 9.676 46.856 8 50.455 8H53v18zm-24 0h3V8h-3v18zm-9.545 0c0-4.185-2.828-7.703-6.658-8.71a8.846 8.846 0 0 0-2.252-.29v9H8V8h2.545v6.429a11.364 11.364 0 0 1 4.264.828C19.024 16.965 22 21.13 22 26h-2.545zm-.568-18H23l-6.007 5c-.948-.39-1.95-.704-2.993-.932L18.887 8zM0 0v34h114V0H0z" fill="#d2232a" fill-rule="evenodd"/></svg>

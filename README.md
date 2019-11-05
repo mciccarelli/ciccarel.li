@@ -1,12 +1,19 @@
-# portfolio site
+# ciccarel.li
 
-isomorphic javascript app built with [next.js](https://github.com/zeit/next.js)
+website built with React, Next.js, Tailwind + Framer Motion
 
-## how to use
+## How to use
 
-install it and run:
+**Running**
+
+To get this example running you just need to
 
 ```bash
 npm install
 npm run dev
+# or
+yarn
+yarn dev
 ```
+
+Visit [http://localhost:3000](http://localhost:3000) and try to modify `styles/index.css`.

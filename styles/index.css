@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply .font-body;
+  background: theme('colors.grey-mid');
+  color: theme('colors.grey-dark');
+}
+
+a {
+  color: theme('colors.grey-dark');
+  transition: border-color 0.2s ease-in-out;
+  border-bottom: 1px solid rgba(theme('colors.grey-light'), 0.3);
+}
+
+a:hover,
+a:active,
+a:focus {
+  border-color: theme('colors.highlighter');
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  src: url('/static/fonts/GaramondPremrPro-LtDisp.woff2') format('woff2');
+  src: url('/static/fonts/GaramondPremrPro-LtDisp.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  src: url('/static/fonts/GaramondPremrPro-LtItDisp.woff2') format('woff2');
+  src: url('/static/fonts/GaramondPremrPro-LtItDisp.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  src: url('/static/fonts/GaramondPremrPro-Disp.woff2') format('woff2');
+  src: url('/static/fonts/GaramondPremrPro-Disp.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  src: url('/static/fonts/GaramondPremrPro-ItDisp.woff2') format('woff2');
+  src: url('/static/fonts/GaramondPremrPro-ItDisp.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  src: url('/static/fonts/GaramondPremrPro-MedDisp.woff2') format('woff2');
+  src: url('/static/fonts/GaramondPremrPro-MedDisp.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  src: url('/static/fonts/GaramondPremrPro-MedItDisp.woff2') format('woff2');
+  src: url('/static/fonts/GaramondPremrPro-MedItDisp.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('/static/fonts/BrandonGrotesque-Regular.woff2') format('woff2'),
+    url('/static/fonts/BrandonGrotesque-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('/static/fonts/BrandonGrotesque-Bold.woff2') format('woff2'),
+    url('/static/fonts/BrandonGrotesque-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
