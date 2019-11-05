@@ -4,20 +4,38 @@
 
 body {
   @apply .font-body;
-  background: theme('colors.grey-mid');
-  color: theme('colors.grey-dark');
-}
-
-a {
-  color: theme('colors.grey-dark');
-  transition: border-color 0.2s ease-in-out;
-  border-bottom: 1px solid rgba(theme('colors.grey-light'), 0.3);
+  background: theme('colors.smoke');
+  color: theme('colors.black');
 }
 
 a:hover,
 a:active,
 a:focus {
   border-color: theme('colors.highlighter');
+}
+
+@font-face {
+  font-family: 'Saol Display';
+  src: url('/static/fonts/SaolDisplay-Light.woff2') format('woff2'),
+    url('/static/fonts/SaolDisplay-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Saol Display';
+  src: url('/static/fonts/SaolDisplay-LightItalic.woff2') format('woff2'),
+    url('/static/fonts/SaolDisplay-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Saol Display';
+  src: url('/static/fonts/SaolDisplay-Regular.woff2') format('woff2'),
+    url('/static/fonts/SaolDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {

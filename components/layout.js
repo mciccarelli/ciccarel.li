@@ -12,10 +12,32 @@ const Layout = ({ title, children }) => (
       />
     </Head>
     <Nav />
+    <div className="grid"> </div>
     <main>{children}</main>
     <Footer />
     <style jsx>{`
       .wrap {
+        @apply .relative;
+      }
+      .wrap::before,
+      .wrap::after {
+        @apply .fixed .h-full .top-0;
+        left: 25%;
+        width: 1px;
+        background: rgba(000, 000, 000, 0.1);
+        content: ' ';
+      }
+      .wrap::after {
+        left: auto;
+        right: 25%;
+      }
+      .grid {
+        @apply .fixed .h-full .top-0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        background: rgba(000, 000, 000, 0.1);
+        content: ' ';
       }
     `}</style>
   </div>

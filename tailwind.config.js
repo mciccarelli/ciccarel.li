@@ -1,8 +1,9 @@
 module.exports = {
   theme: {
     fontFamily: {
-      display: ['Brandon Grotesque', 'sans-serif'],
-      body: ['Garamond Premiere Pro', 'serif'],
+      //'Garamond Premiere Pro',
+      display: ['Saol Display', 'serif'],
+      body: ['Brandon Grotesque', 'sans-serif'],
     },
     container: {
       padding: '2rem',
@@ -12,10 +13,8 @@ module.exports = {
         tiny: '0.625rem',
       },
       colors: {
-        'off-white': '#FEFFEA',
-        'grey-light': '#a3a3a3',
-        'grey-mid': '#C9C9C9',
-        'grey-dark': '#424242',
+        smoke: '#d2dcd1',
+        black: '#030303',
         highlighter: '#fcfc62',
       },
     },
