@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Layout } from '../components';
-
+import cx from 'classnames';
 import data from '../static/data';
 
 const Projects = () => {
@@ -43,7 +43,7 @@ const Projects = () => {
     <Layout>
       <section className="container mx-auto overflow-hidden">
         <div className="max-w-3xl mx-auto flex flex-col pt-32 lg:pt-40">
-          <h2 className="font-body font-bold mb-12 text-xl uppercase tracking-wider">
+          <h2 className="font-body font-bold mb-12 text-sm uppercase tracking-wider">
             Recent projects
           </h2>
           <motion.ol
@@ -55,24 +55,26 @@ const Projects = () => {
             {data.projects
               .slice()
               .reverse()
-              .map((item, i) => (
+              .map(({ isComingSoon, url, title, info }, i) => (
                 <motion.li
                   key={`project-${i}`}
                   custom={i}
                   animate="visible"
                   variants={variants}
-                  className="plist__item"
+                  className={cx('plist__item', {
+                    'plist__item--coming-soon': isComingSoon,
+                  })}
                 >
                   <div className="plist__item__number">
                     {padNumber(i + 1, 2)}
                   </div>
                   <a
                     className="plist__item__title"
-                    href={item.url}
-                    target="_blank"
+                    href={isComingSoon ? '#' : url}
+                    target={isComingSoon ? '_self' : '_blank'}
                   >
-                    {item.title}
-                    <span>{item.info}</span>
+                    {title}
+                    <span>{isComingSoon ? 'Coming Soon' : info}</span>
                   </a>
                 </motion.li>
               ))}
@@ -81,7 +83,7 @@ const Projects = () => {
       </section>
       <style jsx global>{`
         .plist {
-          @apply .flex .flex-col .p-0 .mb-10 .list-none;
+          @apply .flex .flex-col .px-8 .mb-10 .list-none;
         }
 
         .plist__item {
@@ -92,75 +94,108 @@ const Projects = () => {
           margin-bottom: 0;
         }
 
+        .plist__item--coming-soon .plist__item__title {
+          @apply .cursor-not-allowed;
+          opacity: 0.5;
+        }
+
+        .plist__item--coming-soon .plist__item__title::before,
+        .plist__item--coming-soon .plist__item__title:hover::before {
+          width: 100%;
+          background: rgba(#000, 0.9);
+        }
+
+        .plist__item--coming-soon .plist__item__title::after {
+          width: 100%;
+          background: transparent;
+        }
+
+        .plist__item--coming-soon .plist__item__title span {
+          @apply .text-black;
+          opacity: 1;
+        }
+
         .plist__item__number {
-          @apply .font-body .absolute;
-          color: rgba(0, 0, 0, 0.2);
+          @apply .font-body .absolute .text-xs;
+          color: rgba(#000, 0.2);
           top: 0;
           left: -2rem;
         }
 
         .plist__item__title {
-          @apply .font-display .text-6xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none;
+          @apply .font-display .text-xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none;
           transition: 0.4s;
-          height: 50px;
         }
 
         .plist__item__title span {
-          @apply .font-bold .text-xs .uppercase .text-white .absolute .tracking-wide;
+          @apply .font-body .text-xs .text-black .block;
           white-space: nowrap;
-          top: 50%;
-          left: 0;
-          z-index: 1;
-          transform: translateY(-50%);
-          transition: all 0.2s ease;
-          opacity: 0;
         }
 
-        .plist__item__title::before {
-          content: '';
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          height: 30px;
-          width: 0;
-          transition: width 0s ease, background 0.2s ease;
-        }
+        @screen md {
+          .plist {
+            @apply .px-0;
+          }
 
-        .plist__item__title::after {
-          content: '';
-          display: block;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          height: 30px;
-          width: 0;
-          background: theme('colors.highlighter');
-          transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
-        }
+          .plist__item__title {
+            @apply .text-6xl;
+            height: 50px;
+          }
 
-        .plist__item__title span {
-          @apply .font-body .uppercase .block .px-4;
-          color: rgba(0, 0, 0, 0.8);
-        }
+          .plist__item__title::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 30px;
+            width: 0;
+            transition: width 0s ease, background 0.2s ease;
+          }
 
-        .plist__item__title:hover::before {
-          width: 100%;
-          background: theme('colors.highlighter');
-          transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
-        }
+          .plist__item__title::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 30px;
+            width: 0;
+            background: theme('colors.highlighter');
+            transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+          }
 
-        .plist__item__title:hover::after {
-          width: 100%;
-          height: 100%;
-          background: transparent;
-          transition: all 0s ease;
-        }
+          .plist__item__title:hover::before {
+            width: 100%;
+            background: theme('colors.highlighter');
+            transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+          }
 
-        .plist__item__title:hover span {
-          opacity: 1;
+          .plist__item__title:hover::after {
+            width: 100%;
+            background: transparent;
+            transition: all 0s ease;
+          }
+
+          .plist__item__title:hover span {
+            opacity: 1;
+          }
+
+          .plist__item__title span {
+            @apply .absolute .px-4 .font-bold .uppercase .tracking-wide;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+            transform: translateY(-50%);
+            transition: all 0.2s ease;
+            opacity: 0;
+          }
+
+          .plist__item--coming-soon .plist__item__title span {
+            @apply .text-white;
+          }
         }
       `}</style>
     </Layout>

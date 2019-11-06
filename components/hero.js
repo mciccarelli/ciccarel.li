@@ -2,11 +2,14 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   const items = [
-    { text: 'Michael Ciccarelli' },
-    { text: 'is a creative developer' },
-    { text: 'specialized in front-end' },
-    { text: 'ui, <em>&amp;</em> React — Currently' },
-    { text: 'based in Miami' },
+    { text: 'Michael Ciccarelli ' },
+    { text: 'is a <em>developer</em> and <em>consultant</em> ' },
+    { text: 'specialized in building high-' },
+    { text: 'performant server-side rendered ' },
+    { text: 'websites and apps with <em>React &amp; Next.js</em> ' },
+    { text: '— currently based in <em>Miami</em>, ' },
+    { text: 'where he runs a small dev studio, ' },
+    { text: 'and usually works as a remote contractor.' },
   ];
 
   const container = {
@@ -34,31 +37,31 @@ const Hero = () => {
         duration: 0.5,
       },
     }),
-    hidden: { opacity: 0, y: '-50%' },
+    hidden: { opacity: 0, y: -50 },
   };
 
   return (
     <div className="hero">
       <div className="intro flex flex-col">
         <div className="container mx-auto flex flex-col items-center jusitfy-center">
-          <motion.div
+          <motion.h2
             initial="hidden"
             animate="visible"
             variants={container}
             className="flex-inline flex-col justify-start"
           >
             {items.map((item, i) => (
-              <motion.div
+              <motion.span
                 key={i}
                 custom={i}
+                initial="hidden"
                 animate="visible"
                 variants={variants}
                 className="row"
-              >
-                <h2 dangerouslySetInnerHTML={{ __html: item.text }} />
-              </motion.div>
+                dangerouslySetInnerHTML={{ __html: item.text }}
+              />
             ))}
-          </motion.div>
+          </motion.h2>
           {/* <div className="annotation">
             <div className="relative flex mx-2">
               <p className="location">scroll down →</p>
@@ -72,31 +75,27 @@ const Hero = () => {
           @apply .flex .items-center .justify-center .min-h-screen .relative;
         }
 
-        .hero h1 {
-          @apply .font-display .font-light .text-6xl .leading-tight .mb-20 .uppercase;
-        }
         .hero h2 {
-          @apply .text-xl .font-display .font-light .mb-0 .uppercase;
-          white-space: nowrap;
-        }
-
-        .hero .row {
-          @apply .text-left .relative .inline-flex;
+          @apply .text-xl .font-display .font-light .mb-0 .leading-tight .text-justify;
+          text-indent: 2.5em;
         }
 
         .hero p {
           @apply .text-xs .font-body .tracking-wide .uppercase;
           color: rgba(0, 0, 0, 0.3);
         }
+
         .hero .annotation {
           @apply .invisible .fixed;
           right: 4rem;
           bottom: 2rem;
           height: 120px;
         }
+
         .hero .annotation > div {
           @apply .h-full .relative;
         }
+
         .hero .location {
           @apply .absolute;
           transform: translateX(-50%) translateY(-50%) rotate(90deg);
@@ -107,36 +106,17 @@ const Hero = () => {
 
         @screen md {
           .hero h2 {
-            font-size: 6vw;
-            line-height: 0.9;
-          }
-          .hero .row:nth-child(1n) {
-            @apply .pl-20;
-          }
-
-          .hero .row:nth-child(2n) {
-            @apply .pl-2;
-          }
-
-          .hero .row:nth-child(3n) {
-            @apply .pl-16;
-          }
-
-          .hero .row:nth-child(4n) {
-            @apply .pl-6;
-          }
-
-          .hero .row:nth-child(5n) {
-            @apply .pl-24;
+            @apply .max-w-5xl .text-4xl .leading-none;
           }
         }
 
         @screen lg {
+          .hero h2 {
+            @apply .text-6xl;
+          }
+
           .hero .annotation {
             @apply .visible;
-          }
-          .hero h1 {
-            font-size: 18vw;
           }
         }
       `}</style>

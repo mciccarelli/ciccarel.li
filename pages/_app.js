@@ -1,11 +1,19 @@
 import React from 'react';
 import App from 'next/app';
+
 import '../styles/index.css';
 
-// NOTE: silence SSR warning on the server
-React.useLayoutEffect = React.useEffect;
+export default class Ciccarelli extends App {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
 
-export default class Revolve extends App {
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
+  }
+
   render() {
     const { Component, pageProps } = this.props;
 

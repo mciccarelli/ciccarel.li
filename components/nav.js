@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import cx from 'classnames';
 
-const Nav = ({ router }) => (
+const Nav = ({ toggleDarkMode, router }) => (
   <nav className="nav">
     <div className="flex justify-end md:justify-between items-center p-10 lg:p-16">
       <Link href="/">
@@ -34,6 +34,11 @@ const Nav = ({ router }) => (
           </Link>
         </li>
       </ul>
+      {/* <img
+        className="toggler"
+        onClick={toggleDarkMode}
+        src="../static/i-sun.svg"
+      /> */}
     </div>
     <style jsx>{`
       .nav {
@@ -76,6 +81,11 @@ const Nav = ({ router }) => (
       li a.active span::after {
         height: 6px;
         background-color: theme('colors.highlighter');
+      }
+
+      .toggler {
+        @apply .cursor-pointer;
+        width: 20px;
       }
     `}</style>
   </nav>

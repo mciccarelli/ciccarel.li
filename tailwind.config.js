@@ -1,7 +1,6 @@
 module.exports = {
   theme: {
     fontFamily: {
-      //'Garamond Premiere Pro',
       display: ['Saol Display', 'serif'],
       body: ['Brandon Grotesque', 'sans-serif'],
     },
@@ -16,6 +15,9 @@ module.exports = {
         smoke: '#d2dcd1',
         black: '#030303',
         highlighter: '#fcfc62',
+        orange: '#EF6807',
+        'dark-grey': '#252422',
+        chocolate: '#403D39',
       },
     },
   },

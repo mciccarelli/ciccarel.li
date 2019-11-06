@@ -21,18 +21,18 @@ const Contact = () => {
   const variants = {
     visible: i => ({
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         delay: i * 0.3,
         duration: 0.2,
       },
     }),
-    hidden: { opacity: 0, x: '50%' },
+    hidden: { opacity: 0, y: '-20%' },
   };
 
   return (
     <Layout>
-      <div className="contact text-right flex items-center">
+      <div className="contact flex items-center">
         <motion.div
           initial="hidden"
           animate="visible"

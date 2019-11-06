@@ -4,8 +4,9 @@
 
 body {
   @apply .font-body;
-  background: theme('colors.smoke');
-  color: theme('colors.black');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a:hover,
@@ -36,54 +37,6 @@ a:focus {
     url('/static/fonts/SaolDisplay-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garamond Premiere Pro';
-  src: url('/static/fonts/GaramondPremrPro-LtDisp.woff2') format('woff2');
-  src: url('/static/fonts/GaramondPremrPro-LtDisp.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garamond Premiere Pro';
-  src: url('/static/fonts/GaramondPremrPro-LtItDisp.woff2') format('woff2');
-  src: url('/static/fonts/GaramondPremrPro-LtItDisp.woff') format('woff');
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Garamond Premiere Pro';
-  src: url('/static/fonts/GaramondPremrPro-Disp.woff2') format('woff2');
-  src: url('/static/fonts/GaramondPremrPro-Disp.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garamond Premiere Pro';
-  src: url('/static/fonts/GaramondPremrPro-ItDisp.woff2') format('woff2');
-  src: url('/static/fonts/GaramondPremrPro-ItDisp.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Garamond Premiere Pro';
-  src: url('/static/fonts/GaramondPremrPro-MedDisp.woff2') format('woff2');
-  src: url('/static/fonts/GaramondPremrPro-MedDisp.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Garamond Premiere Pro';
-  src: url('/static/fonts/GaramondPremrPro-MedItDisp.woff2') format('woff2');
-  src: url('/static/fonts/GaramondPremrPro-MedItDisp.woff') format('woff');
-  font-weight: 600;
-  font-style: italic;
 }
 
 @font-face {
