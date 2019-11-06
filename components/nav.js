@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import cx from 'classnames';
 
-const Nav = ({ toggleDarkMode, router }) => (
+const Nav = ({ router }) => (
   <nav className="nav">
     <div className="flex justify-end md:justify-between items-center p-10 lg:p-16">
       <Link href="/">

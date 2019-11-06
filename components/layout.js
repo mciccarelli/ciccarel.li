@@ -4,13 +4,12 @@ import { Nav, Footer } from '../components';
 import cx from 'classnames';
 
 const Layout = ({ title, children }) => {
-  const hours = new Date().getHours();
-  const isDayTime = hours > 6 && hours < 20;
-
-  const [darkMode, toggleDarkMode] = useState(!isDayTime);
+  // const hours = new Date().getHours();
+  // const isDayTime = hours > 6 && hours < 20;
+  // const [darkMode, toggleDarkMode] = useState(!isDayTime);
 
   return (
-    <div className={cx('wrap', { 'wrap--dark': darkMode })}>
+    <div className="wrap">
       <Head>
         <title>{title}</title>
         <meta
@@ -18,7 +17,7 @@ const Layout = ({ title, children }) => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </Head>
-      <Nav toggleDarkMode={() => toggleDarkMode(!darkMode)} />
+      <Nav />
       <div className="grid"></div>
       <main>{children}</main>
       <Footer />
