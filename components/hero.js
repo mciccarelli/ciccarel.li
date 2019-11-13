@@ -1,31 +1,30 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const items = [
-    { text: 'Michael Ciccarelli ' },
-    { text: 'is a <em>developer</em> and <em>consultant</em> ' },
-    { text: 'specialized in building high-' },
-    { text: 'performant server-side rendered ' },
-    { text: 'websites and apps with <em>React &amp; Next.js</em> ' },
-    { text: '— currently based in <em>Miami</em>, ' },
-    { text: 'where he runs a small dev studio, ' },
-    { text: 'and usually works as a remote contractor.' },
+    { text: "Michael Ciccarelli " },
+    { text: "is a creative <em>developer</em> " },
+    { text: "and <em>consultant</em> specialized in building " },
+    { text: "high-performant server-side rendered websites " },
+    { text: "with <em>React &amp; Next.js</em> — currently " },
+    { text: "based in <em>Miami</em>, where he runs a " },
+    { text: "small dev studio, and usually works as a remote contractor." }
   ];
 
   const container = {
     visible: {
       opacity: 1,
       transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.3,
-      },
+        when: "beforeChildren",
+        staggerChildren: 0.3
+      }
     },
     hidden: {
       opacity: 0,
       transition: {
-        when: 'afterChildren',
-      },
-    },
+        when: "afterChildren"
+      }
+    }
   };
 
   const variants = {
@@ -34,10 +33,10 @@ const Hero = () => {
       y: 0,
       transition: {
         delay: i * 0.1,
-        duration: 0.5,
-      },
+        duration: 0.5
+      }
     }),
-    hidden: { opacity: 0, y: -50 },
+    hidden: { opacity: 0, y: -50 }
   };
 
   return (
@@ -62,11 +61,6 @@ const Hero = () => {
               />
             ))}
           </motion.h2>
-          {/* <div className="annotation">
-            <div className="relative flex mx-2">
-              <p className="location">scroll down →</p>
-            </div>
-          </div> */}
         </div>
       </div>
 
@@ -77,7 +71,7 @@ const Hero = () => {
 
         .hero h2 {
           @apply .text-xl .font-display .font-light .mb-0 .leading-tight .text-justify;
-          text-indent: 2.5em;
+          text-indent: 2em;
         }
 
         .hero p {
@@ -85,38 +79,9 @@ const Hero = () => {
           color: rgba(0, 0, 0, 0.3);
         }
 
-        .hero .annotation {
-          @apply .invisible .fixed;
-          right: 4rem;
-          bottom: 2rem;
-          height: 120px;
-        }
-
-        .hero .annotation > div {
-          @apply .h-full .relative;
-        }
-
-        .hero .location {
-          @apply .absolute;
-          transform: translateX(-50%) translateY(-50%) rotate(90deg);
-          bottom: 50%;
-          left: 50%;
-          width: 120px;
-        }
-
         @screen md {
           .hero h2 {
-            @apply .max-w-5xl .text-4xl .leading-none;
-          }
-        }
-
-        @screen lg {
-          .hero h2 {
-            @apply .text-6xl;
-          }
-
-          .hero .annotation {
-            @apply .visible;
+            @apply .max-w-4xl .text-5xl .leading-none;
           }
         }
       `}</style>
