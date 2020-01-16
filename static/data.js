@@ -9,13 +9,6 @@ export default {
       url: 'http://formlessny.com/',
     },
     {
-      id: 2,
-      title: 'Naked Music',
-      client: 'Naked Music',
-      info: 'WordPress, JavaScript, jQuery',
-      url: 'http://www.naked-music.com',
-    },
-    {
       id: 3,
       title: 'Design Tool',
       client: 'Filzfelt x Spinneybeck',
@@ -37,13 +30,6 @@ export default {
       url: 'http://redgesalons.com',
     },
     {
-      id: 6,
-      title: 'VICE: Noisey',
-      client: 'VICE',
-      info: 'React, Node REST API, language/localization',
-      url: 'http://noisey.vice.com',
-    },
-    {
       id: 7,
       title: 'VENN Skincare',
       client: 'Pentagram x VENN',
@@ -51,25 +37,11 @@ export default {
       url: 'http://vennskincare.com',
     },
     {
-      id: 8,
-      title: 'The Bedari Foundation',
-      client: 'Wet Cement x TBF',
-      info: 'Gatsby.js, GraphQL, Contentful',
-      url: 'https://www.thebedarifoundation.org/',
-    },
-    {
       id: 9,
       title: 'Avatar Companies',
       client: 'Wet Cement x Avatar',
       info: 'Next.js, styled-components + Contentful',
       url: 'http://avatarcompanies.com/',
-    },
-    {
-      id: 10,
-      title: 'Made 2 Measure',
-      client: 'Elephant x m2m',
-      info: 'SSR React App, Node API, Contentful, Ooyala',
-      url: 'http://m2m.tv',
     },
     {
       id: 11,
@@ -107,6 +79,14 @@ export default {
       client: 'Noah Apartments',
       info: 'React, Next.js, Framer Motion',
       url: 'https://noahapartments.com',
+    },
+    {
+      id: 16,
+      isComingSoon: true,
+      title: 'Hayloft Auctions',
+      client: 'Hayloft',
+      info: 'React, Next.js, Apollo GQL',
+      url: 'https://hayloft.now.sh',
     },
   ],
 };

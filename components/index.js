@@ -1,7 +1,5 @@
 export { default as Layout } from './layout';
-export { default as Footer } from './footer';
-export { default as Nav } from './nav';
-export { default as Logo } from './logo';
-export { default as Hero } from './hero';
-export { default as Symbol } from './symbol';
-export { default as Responsive } from './responsive';
+export { default as Intro } from './intro';
+export { default as Feed } from './feed';
+export { default as Contact } from './contact';
+export { default as Projects } from './projects';

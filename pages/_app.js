@@ -1,22 +1,5 @@
-import React from 'react';
-import App from 'next/app';
-
 import '../styles/index.css';
 
-export default class Ciccarelli extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
+const Ciccarelli = ({ Component, pageProps }) => <Component {...pageProps} />;
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps };
-  }
-
-  render() {
-    const { Component, pageProps } = this.props;
-
-    return <Component {...pageProps} />;
-  }
-}
+export default Ciccarelli;

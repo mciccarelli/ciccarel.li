@@ -3,54 +3,32 @@
 @tailwind utilities;
 
 body {
-  @apply .font-body;
+  @apply .font-body .text-grey-light .bg-purple-dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
+a {
+  color: theme('colors.purple-light');
+  opacity: 0.85;
+  transition: 0.15s opacity ease-in-out;
+}
+
 a:hover,
 a:active,
 a:focus {
-  border-color: theme('colors.highlighter');
+  opacity: 1;
 }
 
-@font-face {
-  font-family: 'Saol Display';
-  src: url('/static/fonts/SaolDisplay-Light.woff2') format('woff2'),
-    url('/static/fonts/SaolDisplay-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply .font-bold .text-lg;
 }
 
-@font-face {
-  font-family: 'Saol Display';
-  src: url('/static/fonts/SaolDisplay-LightItalic.woff2') format('woff2'),
-    url('/static/fonts/SaolDisplay-LightItalic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Saol Display';
-  src: url('/static/fonts/SaolDisplay-Regular.woff2') format('woff2'),
-    url('/static/fonts/SaolDisplay-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('/static/fonts/BrandonGrotesque-Regular.woff2') format('woff2'),
-    url('/static/fonts/BrandonGrotesque-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('/static/fonts/BrandonGrotesque-Bold.woff2') format('woff2'),
-    url('/static/fonts/BrandonGrotesque-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
+section {
+  @apply .min-h-screen;
 }

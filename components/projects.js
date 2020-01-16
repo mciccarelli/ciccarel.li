@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
-import { Layout } from '../components';
 import cx from 'classnames';
-import data from '../static/data';
 
-const Projects = () => {
+const Projects = ({ data }) => {
   // formating numbers. turn 1, 2 into 01, 02
   const padNumber = (num, size) => {
     let s = num + '';
@@ -40,47 +38,44 @@ const Projects = () => {
   };
 
   return (
-    <Layout>
-      <section className="container mx-auto overflow-hidden">
-        <div className="max-w-3xl mx-auto flex flex-col pt-32 lg:pt-40">
-          <h2 className="font-body font-bold mb-12 text-sm uppercase tracking-wider">
-            Recent projects
-          </h2>
-          <motion.ol
-            initial="hidden"
-            animate="visible"
-            variants={container}
-            className="plist"
-          >
-            {data.projects
-              .slice()
-              .reverse()
-              .map(({ isComingSoon, url, title, info }, i) => (
-                <motion.li
-                  key={`project-${i}`}
-                  custom={i}
-                  animate="visible"
-                  variants={variants}
-                  className={cx('plist__item', {
-                    'plist__item--coming-soon': isComingSoon,
-                  })}
+    <section className="">
+      <div className="max-w-3xl flex flex-col items-start justify-start p-8 md:p-12">
+        <h2 className="font-body font-bold mb-12 text-sm uppercase tracking-wider">
+          Recent projects
+        </h2>
+        <motion.ol
+          initial="hidden"
+          animate="visible"
+          variants={container}
+          className="plist"
+        >
+          {data.projects
+            .slice()
+            .reverse()
+            .map(({ isComingSoon, url, title, info }, i) => (
+              <motion.li
+                key={`project-${i}`}
+                custom={i}
+                animate="visible"
+                variants={variants}
+                className={cx('plist__item', {
+                  'plist__item--coming-soon': isComingSoon,
+                })}
+              >
+                <div className="plist__item__number">{padNumber(i + 1, 2)}</div>
+                <a
+                  className="plist__item__title"
+                  href={isComingSoon ? '#' : url}
+                  target={isComingSoon ? '_self' : '_blank'}
                 >
-                  <div className="plist__item__number">
-                    {padNumber(i + 1, 2)}
-                  </div>
-                  <a
-                    className="plist__item__title"
-                    href={isComingSoon ? '#' : url}
-                    target={isComingSoon ? '_self' : '_blank'}
-                  >
-                    {title}
-                    <span>{isComingSoon ? 'Coming Soon' : info}</span>
-                  </a>
-                </motion.li>
-              ))}
-          </motion.ol>
-        </div>
-      </section>
+                  {title}
+                  <span>{isComingSoon ? 'Coming Soon' : info}</span>
+                </a>
+              </motion.li>
+            ))}
+        </motion.ol>
+      </div>
+
       <style jsx global>{`
         .plist {
           @apply .flex .flex-col .px-8 .mb-10 .list-none;
@@ -95,14 +90,14 @@ const Projects = () => {
         }
 
         .plist__item--coming-soon .plist__item__title {
-          @apply .cursor-not-allowed;
           opacity: 0.5;
         }
 
         .plist__item--coming-soon .plist__item__title::before,
         .plist__item--coming-soon .plist__item__title:hover::before {
           width: 100%;
-          background: rgba(#000, 0.9);
+          /*background: rgba(#000, 0.9);*/
+          background: theme('colors.purple-dark');
         }
 
         .plist__item--coming-soon .plist__item__title::after {
@@ -163,13 +158,13 @@ const Projects = () => {
             transform: translateY(-50%);
             height: 30px;
             width: 0;
-            background: theme('colors.highlighter');
+            background: theme('colors.purple-light');
             transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
           }
 
           .plist__item__title:hover::before {
             width: 100%;
-            background: theme('colors.highlighter');
+            background: theme('colors.purple-light');
             transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
           }
 
@@ -198,7 +193,7 @@ const Projects = () => {
           }
         }
       `}</style>
-    </Layout>
+    </section>
   );
 };
 

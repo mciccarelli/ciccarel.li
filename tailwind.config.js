@@ -1,23 +1,22 @@
 module.exports = {
   theme: {
     fontFamily: {
-      display: ['Saol Display', 'serif'],
-      body: ['Brandon Grotesque', 'sans-serif'],
-    },
-    container: {
-      padding: '2rem',
+      body: ['Roboto Mono', 'monospace'],
     },
     extend: {
-      fontSize: {
-        tiny: '0.625rem',
-      },
       colors: {
-        smoke: '#d2dcd1',
-        black: '#030303',
-        highlighter: '#fcfc62',
-        orange: '#EF6807',
-        'dark-grey': '#252422',
-        chocolate: '#403D39',
+        'purple-dark': '#16161E',
+        'purple-light': '#8762E3',
+        'grey-dark': '#66666E',
+        'grey-light': '#cfd0d2',
+        twitter: '#00aced',
+        instagram: '#E1306C',
+        github: '#6cc644',
+        // 'purple-dark': '#170312',
+        // 'purple-light': '#A47EAD',
+        // pink: '#E0AFA0',
+        // highlighter: '#fcfc62',
+        // orange: '#EF6807',
       },
     },
   },
