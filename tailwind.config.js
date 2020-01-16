@@ -2,6 +2,7 @@ module.exports = {
   theme: {
     fontFamily: {
       body: ['Roboto Mono', 'monospace'],
+      display: ['Roboto Mono', 'monospace'],
     },
     extend: {
       colors: {

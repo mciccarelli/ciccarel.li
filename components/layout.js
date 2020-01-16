@@ -10,10 +10,6 @@ const Layout = ({ title, description, children }) => (
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
-      <link
-        href="//fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700&display=swap"
-        rel="stylesheet"
-      />
     </Head>
     <main>{children}</main>
     <style jsx>{`
