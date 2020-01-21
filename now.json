@@ -4,5 +4,22 @@
   "alias": [
     "ciccarel.li",
     "ciccarelli"
+  ],
+  "build": {
+    "env": {
+      "TWITTER_CLIENT_USERNAME": "@twitter-client-username",
+      "TWITTER_CLIENT_PASSWORD": "@twitter-client-password",
+      "SENDGRID_API_KEY": "@sendgrid-api-key"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=3600"
+      },
+      "dest": "/api/$1",
+      "continue": true
+    }
   ]
 }

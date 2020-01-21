@@ -26,7 +26,7 @@ h2,
 h3,
 h4,
 h5 {
-  @apply .font-bold .text-lg;
+  @apply .font-bold .text-base;
 }
 
 section {
@@ -107,4 +107,28 @@ section {
     /* Safari, Android, iOS */
       url('/static/fonts/roboto-mono-v7-latin-700italic.svg#RobotoMono')
       format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Saol Display';
+  src: url('/static/fonts/SaolDisplay-Light.woff2') format('woff2'),
+    url('/static/fonts/SaolDisplay-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Saol Display';
+  src: url('/static/fonts/SaolDisplay-LightItalic.woff2') format('woff2'),
+    url('/static/fonts/SaolDisplay-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Saol Display';
+  src: url('/static/fonts/SaolDisplay-Regular.woff2') format('woff2'),
+    url('/static/fonts/SaolDisplay-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }

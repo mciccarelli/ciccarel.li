@@ -1,13 +1,21 @@
-import { Layout, Intro, Feed, Contact } from '../components';
+import { Layout, Intro, Feed } from '../components';
+import { API_URL } from '../lib/constants';
+import fetch from 'isomorphic-unfetch';
 
-const HomePage = () => (
+const Index = ({ activityItems }) => (
   <Layout>
-    <section className="flex flex-col items-start jusitfy-start max-w-2xl p-8 md:p-16">
+    <section className="flex flex-col items-start jusitfy-start container max-w-4xl mx-auto p-8 md:px-16">
       <Intro />
-      <Feed />
-      <Contact />
+      {activityItems && <Feed items={activityItems} />}
     </section>
   </Layout>
 );
 
-export default HomePage;
+Index.getInitialProps = async () => {
+  const r = await fetch(`${API_URL}/activity`);
+  const activityItems = await r.json();
+
+  return { activityItems };
+};
+
+export default Index;
