@@ -10,15 +10,18 @@ const Contact = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data, e) => {
-    const req = await fetch(`${API_URL}/send`, {
+    e.preventDefault();
+    const res = await fetch(`/api/send`, {
       method: 'POST',
-      body: JSON.stringify({
-        ...data,
-      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     });
-    const res = await req.json();
+    const text = await res.text();
+    console.log('api response: ', text);
 
-    if (res.succces) {
+    if (res.status === 200) {
       setFormSubmitted(true);
       e.target.reset();
     }

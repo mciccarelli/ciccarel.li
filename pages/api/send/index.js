@@ -1,9 +1,10 @@
+const sgMail = require('@sendgrid/mail');
+
 import { MY_EMAIL_ADDRESS } from '../../../lib/constants';
 
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+export default async function(req, res) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export default async (req, res) => {
   const {
     name,
     company,
@@ -15,19 +16,21 @@ export default async (req, res) => {
     budget,
     referredBy,
     message,
-  } = JSON.parse(req.body);
+  } = req.body;
+
+  const content = {
+    to: MY_EMAIL_ADDRESS,
+    from: email,
+    subject: `website inquiry from - ${email}`,
+    text: `${message}\n\nName: ${name}\nCompany: ${company}\nWebsite: ${website}\nEmail: ${email}\nPhone: ${phone}\nStart date: ${startDate}\nEnd date: ${endDate}\nBudget: ${budget}\nReferred by: ${referredBy}`,
+    // html: `<p>${message}</p>`,
+  };
 
   try {
-    const msg = {
-      to: MY_EMAIL_ADDRESS,
-      from: email,
-      subject: `ciccarel.li: project inquiry from ${name}`,
-      text: `${message}\n\nName: ${name}\nCompany: ${company}\nWebsite: ${website}\nEmail: ${email}\nPhone: ${phone}\nStart date: ${startDate}\nEnd date: ${endDate}\nBudget: ${budget}\nReferred by: ${referredBy}`,
-    };
-    sgMail.send(msg);
-
-    res.status(200).json({ succces: 1, message: 'Message sent successfully!' });
-  } catch (e) {
-    res.status(404).json({ error: 'Error sending form.' });
+    await sgMail.send(content);
+    res.status(200).send('Message sent successfully.');
+  } catch (error) {
+    console.log('ERROR', error);
+    res.status(400).send('Message not sent.');
   }
-};
+}
