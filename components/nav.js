@@ -38,12 +38,8 @@ const Nav = ({ router }) => (
         width: 100%;
       }
 
-      li {
-        @apply .font-body .text-xs .uppercase .tracking-wider;
-      }
-
       li a {
-        color: theme('colors.grey-light');
+        @apply .font-body .font-bold .text-xs .text-grey-light .uppercase .tracking-wider;
         border: 0;
       }
 

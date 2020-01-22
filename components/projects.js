@@ -41,7 +41,7 @@ const Projects = ({ items }) => {
         {items
           .slice()
           .reverse()
-          .map(({ isComingSoon, url, title, info }, i) => (
+          .map(({ isComingSoon, url, title, info, client }, i) => (
             <motion.li
               key={`project-${i}`}
               custom={i}
@@ -57,14 +57,23 @@ const Projects = ({ items }) => {
                 target={isComingSoon ? '_self' : '_blank'}
               >
                 {title}
-                <span>{isComingSoon ? 'Coming Soon' : info}</span>
+                <div className="plist__item__details text-xs md:text-sm">
+                  {isComingSoon ? (
+                    'Coming Soon'
+                  ) : (
+                    <div className="flex flex-col md:flex-row">
+                      <div className="info my-2 md:my-0">{info}</div>
+                      <div className="client md:hidden ">CLIENT: {client}</div>
+                    </div>
+                  )}
+                </div>
               </a>
             </motion.li>
           ))}
       </motion.ol>
       <style jsx global>{`
         .plist {
-          @apply .flex .flex-col .px-8 .mb-10 .list-none;
+          @apply .flex .flex-col .mb-10 .list-none;
         }
 
         .plist__item {
@@ -91,8 +100,8 @@ const Projects = ({ items }) => {
           background: transparent;
         }
 
-        .plist__item--coming-soon .plist__item__title span {
-          @apply .text-black;
+        .plist__item--coming-soon .plist__item__details {
+          @apply .text-grey-light;
           opacity: 1;
         }
 
@@ -101,16 +110,12 @@ const Projects = ({ items }) => {
           transition: 0.4s;
         }
 
-        .plist__item__title span {
-          @apply .font-body .text-xs .text-black .block;
+        .plist__item__details {
+          @apply .font-body .text-grey-light .block .normal-case;
           white-space: nowrap;
         }
 
         @screen md {
-          .plist {
-            @apply .px-0;
-          }
-
           .plist__item__title {
             @apply .text-6xl;
             height: 50px;
@@ -153,12 +158,12 @@ const Projects = ({ items }) => {
             transition: all 0s ease;
           }
 
-          .plist__item__title:hover span {
+          .plist__item__title:hover .plist__item__details {
             opacity: 1;
           }
 
-          .plist__item__title span {
-            @apply .absolute .px-4 .font-bold .uppercase .tracking-wide;
+          .plist__item__details {
+            @apply .absolute .px-4 .tracking-wide .text-black;
             top: 50%;
             left: 0;
             z-index: 1;
@@ -167,7 +172,7 @@ const Projects = ({ items }) => {
             opacity: 0;
           }
 
-          .plist__item--coming-soon .plist__item__title span {
+          .plist__item--coming-soon .plist__item__details {
             @apply .text-white;
           }
         }

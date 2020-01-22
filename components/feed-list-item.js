@@ -29,8 +29,10 @@ const FeedListItem = ({
       return (
         <li className="activity-item api">
           <span className="text-grey-dark">{`${relativeTime(date)}`}</span>{' '}
-          Launched <a href={url}>{url.replace(/(^\w+:|^)\/\//, '')}</a> in
-          collaboration with {client}.
+          <span>
+            Launched <a href={url}>{url.replace(/(^\w+:|^)\/\//, '')}</a> in
+            collaboration with {client}.
+          </span>
         </li>
       );
     case 'update':

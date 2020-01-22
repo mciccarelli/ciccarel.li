@@ -3,16 +3,18 @@ import Link from 'next/link';
 const Intro = () => (
   <div className="flex flex-col">
     <h2 className="mb-8">— Michael Ciccarelli </h2>
-    <p className="mb-4 max-w-2xl">
+    <p className="mb-4 text-sm md:text-base leading-relaxed md:leading-normal max-w-2xl">
       A creative developer specializing in high-performant server-side rendered
       web sites and apps with a focus on modularity, responsive, and interactive
       content. Based in <strike>Brooklyn</strike> Miami, where he runs a small
       dev studio and usually works as a remote contractor.
     </p>
-    <p className="flex text-grey-dark text-sm italic mb-12">
-      [!] Currently accepting new projects for 2020.
+    <p className="flex flex-col md:flex-row text-grey-dark text-xs md:text-sm italic mb-16">
+      <span className="mb-4 md:mb-0">
+        [!] Currently accepting new projects for 2020.
+      </span>
       <Link href="/contact">
-        <a className="flex items-center ml-2">
+        <a className="flex items-center md:ml-2">
           <span className="mr-1">Inquire </span>
           <svg
             style={{ transform: 'scale(0.7)' }}

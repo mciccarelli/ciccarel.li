@@ -32,7 +32,7 @@ const Contact = () => {
       <section className="flex flex-col items-start jusitfy-start max-w-4xl mx-auto p-8 md:px-16">
         <div className="flex flex-col w-full">
           <h2 className="mb-8">— Contact</h2>
-          <p className="mb-8 text-xs leading-loose text-grey-dark max-w-xl">
+          <p className="mb-8 text-xs leading-loose text-grey-light max-w-xl">
             For project inquiries, Please use the form below — you can also
             email me at <a href="mailto:m@ciccarel.li">m@ciccarel.li</a> or
             connect on{' '}
@@ -137,7 +137,7 @@ const Contact = () => {
             <label htmlFor="message">Message</label>
             <textarea
               name="message"
-              placeholder="Please (briefly) tell me more about your project."
+              placeholder="E.g. I'd like to build a new website for my business. We build and repair bicycles."
               rows={10}
               ref={register}
             />

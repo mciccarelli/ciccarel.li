@@ -1,12 +1,16 @@
 import { Layout, Projects } from '../components';
 import { API_URL } from '../lib/constants';
+import { getPeriodInYears } from '../lib/utils';
 import fetch from 'isomorphic-unfetch';
 
 const ProjectsPage = ({ projects }) => {
+  const period = getPeriodInYears(projects);
   return (
     <Layout>
       <section className="flex flex-col items-start jusitfy-start container max-w-4xl mx-auto p-8 md:px-16">
-        <h2 className="mb-8">— Websites</h2>
+        <h2 className="mb-8">
+          — Recent Projects <span className="text-grey-dark">({period})</span>
+        </h2>
         <Projects items={projects} />
       </section>
 
