@@ -7,11 +7,13 @@ const DEFAULT_COUNT = 8;
 const Feed = ({ items }) => {
   const [loading, setLoading] = useState(false);
   const [count, increment] = useState(DEFAULT_COUNT);
-  const [listItems, setListItems] = useState(items.slice(0, DEFAULT_COUNT));
+  const [listItems, setListItems] = useState([]);
   const listRef = useRef();
 
   useEffect(() => {
-    setListItems(items.slice(0, count));
+    if (items && items.length) {
+      setListItems(items.slice(0, count));
+    }
   }, [count]);
 
   // NOTE: faking the load more logic here on client,

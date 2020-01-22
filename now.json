@@ -1,10 +1,6 @@
 {
   "version": 2,
   "scope": "ciccarelli",
-  "alias": [
-    "ciccarel.li",
-    "ciccarelli"
-  ],
   "build": {
     "env": {
       "TWITTER_CLIENT_USERNAME": "@twitter-client-username",
