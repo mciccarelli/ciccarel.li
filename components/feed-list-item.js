@@ -28,36 +28,42 @@ const FeedListItem = ({
       if (isComingSoon) return <></>;
       return (
         <li className="activity-item api">
-          <span className="text-grey-dark">{`${relativeTime(date)}`}</span>{' '}
-          <span>
-            Launched <a href={url}>{url.replace(/(^\w+:|^)\/\//, '')}</a> in
-            collaboration with {client}.
-          </span>
+          <div className="activity-item__date">{`${relativeTime(date)}`}</div>
+          <div className="activity-item__content">
+            Released{' '}
+            <a href={url} title={`Visit ${url.replace(/(^\w+:|^)\/\//, '')}`}>
+              a new project
+            </a>{' '}
+            for {client}.
+          </div>
         </li>
       );
     case 'update':
       return (
         <li className="activity-item api">
-          <span className="text-grey-dark">{`${relativeTime(date)}`}</span>{' '}
-          <span dangerouslySetInnerHTML={{ __html: content }} />
+          <div className="activity-item__date">{`${relativeTime(date)}`}</div>{' '}
+          <div
+            className="activity-item__content"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </li>
       );
     case 'instagram':
       return (
         <li className="activity-item instagram">
-          <span className="text-grey-dark">{`${relativeTime(date)}`}</span>{' '}
-          Posted <a href={url}>a photo</a>{' '}
-          {location ? `from ${location}` : 'on Instagram'}.
+          <div className="activity-item__date">{`${relativeTime(date)}`}</div>
+          <div className="activity-item__content">
+            Posted <a href={url}>a photo</a>{' '}
+            {location ? `from ${location}` : 'on Instagram'}.
+          </div>
         </li>
       );
     case 'twitter':
       return (
         <li className="activity-item twitter">
-          <span className="text-grey-dark">{`${
-            date ? relativeTime(date) : 'n/a'
-          }`}</span>{' '}
+          <div className="activity-item__date">{`${relativeTime(date)}`}</div>{' '}
           {like && (
-            <>
+            <div className="activity-item__content">
               Liked{' '}
               <a
                 href={`https://twitter.com/${user.screen_name}/status/${id_str}`}
@@ -70,42 +76,39 @@ const FeedListItem = ({
                   @{user.screen_name}
                 </a>
               )}{' '}
-              on{' '}
-              <a href={`https://twitter.com/${TWITTER_SCREEN_NAME}`}>Twitter</a>
-            </>
+              on Twitter.
+            </div>
           )}
           {retweet && (
-            <>
+            <div className="activity-item__content">
               Retweeted{' '}
               <a
                 href={`https://twitter.com/${TWITTER_SCREEN_NAME}/status/${id_str}`}
               >
                 something
               </a>{' '}
-              on{' '}
-              <a href={`https://twitter.com/${TWITTER_SCREEN_NAME}`}>Twitter</a>{' '}
-            </>
+              on Twitter.
+            </div>
           )}
           {!retweet && !like && (
-            <>
+            <div className="activity-item__content">
               Posted{' '}
               <a
                 href={`https://twitter.com/${TWITTER_SCREEN_NAME}/status/${id_str}`}
               >
                 a tweet
               </a>{' '}
-              on{' '}
-              <a href={`https://twitter.com/${TWITTER_SCREEN_NAME}`}>Twitter</a>
-            </>
+              on Twitter.
+            </div>
           )}
         </li>
       );
     case 'github':
       return (
         <li className="activity-item github">
-          <span className="text-grey-dark">{`${relativeTime(date)}`}</span>{' '}
+          <div className="activity-item__date">{`${relativeTime(date)}`}</div>{' '}
           {type === 'PushEvent' && (
-            <>
+            <div className="activity-item__content">
               Pushed{' '}
               <a
                 href={`https://github.com/${repo.name}/commit/${payload.head}`}
@@ -114,7 +117,7 @@ const FeedListItem = ({
               </a>{' '}
               to a <a href={`https://github.com/${repo.name}`}>public repo</a>{' '}
               on Github.
-            </>
+            </div>
           )}
           {/* {type === 'StarEvent' && (
             <>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { FeedListItem } from './';
 import { sleep } from '../lib/utils';
+import cx from 'classnames';
 
 const DEFAULT_COUNT = 8;
 
@@ -30,92 +31,116 @@ const Feed = ({ items }) => {
 
     setLoading(false);
 
-    await sleep(200);
+    await sleep(100);
     window.scrollTo({
       top: listRef.current.scrollHeight + listRef.current.clientHeight,
       behavior: 'smooth',
-      block: 'end',
     });
   };
 
   return (
-    <div className="flex flex-col mb-16 container">
-      <h2 className="mb-8">
-        - Activity Feed{' '}
-        <span className="text-grey-dark">
-          ({count}/{items.length})
-        </span>
+    <div className="flex flex-col w-full">
+      <h2 className="mb-6 text-grey-light text-lg leading-tight max-w-xs">
+        Recent activity
       </h2>
       <ul className="legend">
         <li className="api">API</li>
-        <li className="instagram">Instagram</li>
-        <li className="twitter">Twitter</li>
-        <li className="github">Github</li>
+        <li
+          className={cx('instagram', {
+            'opacity-25':
+              items.filter(item => item.feedSource === 'instagram').length < 1,
+          })}
+        >
+          Instagram
+        </li>
+        <li
+          className={cx('twitter', {
+            'opacity-25':
+              items.filter(item => item.feedSource === 'twitter').length < 1,
+          })}
+        >
+          Twitter
+        </li>
+        <li
+          className={cx('github', {
+            'opacity-25':
+              items.filter(item => item.feedSource === 'github').length < 1,
+          })}
+        >
+          Github
+        </li>
       </ul>
       <ul ref={listRef} className="activity">
         {listItems.map((item, idx) => (
           <FeedListItem key={idx} {...item} />
         ))}
-        {loading ? (
-          <p className="text-xs text-grey-dark my-8">LOADING...</p>
-        ) : (
-          <button
-            className="bg-transparent text-purple-light font-bold py-2 px-4 border border-purple-light rounded my-8"
-            onClick={handleLoadMore}
-          >
-            Load More
-          </button>
-        )}
       </ul>
+      <div className="flex items-center">
+        <div className="mr-4">
+          {loading ? (
+            <p className="font-mono text-xs text-white my-8">LOADING...</p>
+          ) : (
+            <button
+              className="bg-transparent text-purple-light text-xs h-10 px-4 border border-purple-light w-32 my-8"
+              onClick={handleLoadMore}
+            >
+              Load More
+            </button>
+          )}
+        </div>
+        <span className="font-mono text-grey-dark text-xs">
+          {count}/{items.length}
+        </span>
+      </div>
+
       <style jsx global>{`
         .legend {
-          @apply .flex .flex-col .mb-4;
-        }
-        .legend li {
-          @apply .flex .items-center .text-sm .mb-2;
-        }
-        .legend li:before {
-          @apply .mr-3 .shadow;
-          content: '';
-          width: 0.75em;
-          height: 0.75em;
-          border-radius: 50%;
-        }
-        .api:before {
-          @apply .bg-orange;
-        }
-        .instagram:before {
-          @apply .bg-instagram;
-        }
-        .twitter:before {
-          @apply .bg-twitter;
-        }
-        .github:before {
-          @apply .bg-github;
+          @apply .hidden;
         }
         .activity-item {
-          @apply .mb-6 .leading-loose .text-sm;
+          @apply .mb-4 .leading-loose .text-xs .font-mono .text-grey-light .flex .flex-col .items-start;
         }
-        .activity-item:before {
-          @apply .mr-4 .shadow .inline-flex;
-          content: '';
-          width: 0.75em;
-          height: 0.75em;
-          border-radius: 50%;
-        }
-        .activity-item span {
-          @apply .mr-2;
+        .activity-item__date {
+          @apply .mr-2 .font-mono .text-grey-dark .text-xs;
         }
 
         @screen md {
           .legend {
-            @apply .flex-row .mb-4;
+            @apply .flex .flex-row .mb-6;
           }
           .legend li {
-            @apply .mb-0 mr-4;
+            @apply .flex .items-center .font-mono .text-xs .text-grey-light .leading-none .mr-6;
+          }
+          .legend li:before {
+            @apply .mr-4;
+            content: '';
+            width: 0.75em;
+            height: 0.75em;
+            border-radius: 50%;
+            transform: translateY(-1px);
           }
           .activity-item {
-            @apply .mb-2 .leading-normal;
+            @apply .mb-2 .leading-normal .flex-row .items-center;
+          }
+          .activity-item:before {
+            @apply .mr-4;
+            content: '';
+            width: 0.75em;
+            height: 0.75em;
+            border-radius: 50%;
+            transform: translateY(-1px);
+          }
+          .api:before {
+            @apply .bg-orange;
+          }
+          .instagram:before {
+            @apply .bg-instagram;
+          }
+          .twitter:before {
+            @apply .bg-twitter;
+          }
+          .github:before {
+            @apply .bg-github;
           }
         }
       `}</style>

@@ -82,6 +82,7 @@ export default async (req, res) => {
 
     return tweets;
   } catch (e) {
-    return { error: 'Error fetching Twitter data.' };
+    console.error('error fetching twitter data', e);
+    return [];
   }
 };

@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Index = ({ activityItems }) => (
   <Layout>
-    <section className="flex flex-col items-start jusitfy-start container max-w-4xl mx-auto p-8 md:px-16">
+    <section className="flex flex-col">
       <Intro />
       {activityItems && <Feed items={activityItems} />}
     </section>

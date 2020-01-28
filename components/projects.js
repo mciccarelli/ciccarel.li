@@ -63,7 +63,7 @@ const Projects = ({ items }) => {
                   ) : (
                     <div className="flex flex-col md:flex-row">
                       <div className="info my-2 md:my-0">{info}</div>
-                      <div className="client md:hidden ">CLIENT: {client}</div>
+                      {/* <div className="client md:hidden ">CLIENT: {client}</div> */}
                     </div>
                   )}
                 </div>
@@ -73,11 +73,11 @@ const Projects = ({ items }) => {
       </motion.ol>
       <style jsx global>{`
         .plist {
-          @apply .flex .flex-col .mb-10 .list-none;
+          @apply .flex .flex-col .mb-16 .list-none;
         }
 
         .plist__item {
-          @apply .mb-8 .relative;
+          @apply .mb-4 .relative;
         }
 
         .plist__item:last-of-type {
@@ -85,7 +85,7 @@ const Projects = ({ items }) => {
         }
 
         .plist__item--coming-soon .plist__item__title {
-          @apply .cursor-not-allowed;
+          @apply .cursor-default .text-grey-dark;
           opacity: 0.5;
         }
 
@@ -106,13 +106,12 @@ const Projects = ({ items }) => {
         }
 
         .plist__item__title {
-          @apply .font-display .text-xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none;
+          @apply .font-body .font-bold .tracking-widest .text-xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none;
           transition: 0.4s;
         }
 
         .plist__item__details {
-          @apply .font-body .text-grey-light .block .normal-case;
-          white-space: nowrap;
+          @apply .text-grey-light .block .font-mono .font-normal .uppercase .text-xs .mb-0 .tracking-normal .leading-normal;
         }
 
         @screen md {
@@ -127,7 +126,7 @@ const Projects = ({ items }) => {
             position: absolute;
             left: 0;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-40%);
             height: 30px;
             width: 0;
             transition: width 0s ease, background 0.2s ease;
@@ -139,7 +138,7 @@ const Projects = ({ items }) => {
             position: absolute;
             right: 0;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(-40%);
             height: 30px;
             width: 0;
             background: theme('colors.yellow');
@@ -163,11 +162,11 @@ const Projects = ({ items }) => {
           }
 
           .plist__item__details {
-            @apply .absolute .px-4 .tracking-wide .text-black;
+            @apply .absolute .px-4 .text-black;
             top: 50%;
             left: 0;
             z-index: 1;
-            transform: translateY(-50%);
+            transform: translateY(-35%);
             transition: all 0.2s ease;
             opacity: 0;
           }

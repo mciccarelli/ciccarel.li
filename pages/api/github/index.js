@@ -15,6 +15,7 @@ export default async () => {
         feedSource: 'github',
       }));
   } catch (e) {
-    return { error: 'Error fetching Github data.' };
+    console.error('error fetching githun data', e);
+    return [];
   }
 };

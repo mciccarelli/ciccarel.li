@@ -1,37 +1,14 @@
 import Link from 'next/link';
+import { introText } from '../data';
 
 const Intro = () => (
-  <div className="flex flex-col">
-    <h2 className="mb-8">— Michael Ciccarelli </h2>
-    <p className="mb-4 text-sm md:text-base leading-relaxed md:leading-normal max-w-2xl">
-      A creative developer specializing in high-performant server-side rendered
-      web sites and apps with a focus on modularity, responsive, and interactive
-      content. Based in <strike>Brooklyn</strike> Miami, where he runs a small
-      dev studio and usually works as a remote contractor.
-    </p>
-    <p className="flex flex-col md:flex-row text-grey-dark text-xs md:text-sm italic mb-16">
-      <span className="mb-4 md:mb-0">
-        [!] Currently accepting new projects for 2020.
-      </span>
-      <Link href="/contact">
-        <a className="flex items-center md:ml-2">
-          <span className="mr-1">Inquire </span>
-          <svg
-            style={{ transform: 'scale(0.7)' }}
-            width="21"
-            height="14"
-            viewBox="0 0 21 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14.9996 1.34315L20.6565 7L14.9996 12.6569"
-              stroke="currentColor"
-            ></path>
-            <path d="M0 7H20" stroke="currentColor"></path>
-          </svg>
-        </a>
-      </Link>
+  <div className="flex flex-col max-w-xl mb-16">
+    <h2
+      className="font-body text-lg md:text-2xl leading-normal md:leading-snug mb-4"
+      dangerouslySetInnerHTML={{ __html: introText }}
+    />
+    <p className="text-grey-dark text-sm font-mono">
+      [!] Currently accepting new projects for early 2020.
     </p>
   </div>
 );

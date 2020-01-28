@@ -1,29 +1,17 @@
-import Link from 'next/link';
 import { withRouter } from 'next/router';
+import { MenuIcon } from './';
+import Link from 'next/link';
 import cx from 'classnames';
 
-const Nav = ({ router }) => (
-  <nav className="nav">
-    <div className="flex justify-start md:justify-end items-center p-8">
-      <ul className="flex">
-        <li className="mr-8">
-          <Link href="/">
-            <a className={cx({ active: router.pathname === '/' })}>
-              <span>Info</span>
-            </a>
-          </Link>
-        </li>
-        <li className="mr-8">
-          <Link href="/projects">
-            <a className={cx({ active: router.pathname === '/projects' })}>
-              <span>Projects</span>
-            </a>
-          </Link>
-        </li>
+const Nav = ({ router, menuOpen, menuToggle }) => (
+  <nav className={cx('nav', { inverted: menuOpen })}>
+    <div className="flex justify-between items-center p-8 ">
+      <MenuIcon menuOpen={menuOpen} onClick={() => menuToggle(!menuOpen)} />
+      <ul className="flex pr-1">
         <li>
           <Link href="/contact">
             <a className={cx({ active: router.pathname === '/contact' })}>
-              <span>Contact</span>
+              <span>Hire Me</span>
             </a>
           </Link>
         </li>
@@ -31,41 +19,38 @@ const Nav = ({ router }) => (
     </div>
     <style jsx>{`
       .nav {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 99;
-        width: 100%;
+        @apply .fixed .left-0 .top-0 .z-40 .w-full;
+      }
+
+      .nav.inverted li a {
+        @apply .text-white;
       }
 
       li a {
-        @apply .font-body .font-bold .text-xs .text-grey-light .uppercase .tracking-wider;
-        border: 0;
+        @apply .font-mono .text-xs .font-normal .text-white .uppercase;
       }
 
       li a span {
-        position: relative;
+        @apply .relative;
       }
 
       li a span::after {
-        position: absolute;
-        transition: background-color 0.2s ease-in-out 0.15s,
-          height 0.2s ease-in-out 0.15s;
-        z-index: -1;
-        content: '';
-        left: -2px;
-        bottom: 1px;
-        width: calc(100% + 4px);
-        height: 0;
+        @apply .absolute;
+        transition: width 0.2s ease-in-out 0.15s;
         background-color: transparent;
+        content: '';
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 1px;
       }
 
       li a:hover span::after,
       li a:focus span::after,
       li a:active span::after,
       li a.active span::after {
-        height: 2px;
-        background-color: theme('colors.purple-light');
+        @apply .bg-purple-light;
+        width: 40%;
       }
     `}</style>
   </nav>

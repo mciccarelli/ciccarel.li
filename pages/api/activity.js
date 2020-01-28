@@ -11,20 +11,26 @@ const fetchStaticData = async route => {
 
 const handler = async (_, res) => {
   try {
-    const [projects, updates, github, instagram, twitter] = await Promise.all([
+    const [
+      projects = [],
+      updates = [],
+      instagram = [],
+      twitter = [],
+      github = [],
+    ] = await Promise.all([
       fetchStaticData(`projects`),
       fetchStaticData(`updates`),
-      fetchGithubEvents(),
       fetchInstagramPosts(),
       fetchTwitterActivity(),
+      fetchGithubEvents(),
     ]);
 
     const sortedItems = [
       ...projects.map(project => ({ ...project, feedSource: 'project' })),
       ...updates.map(update => ({ ...update, feedSource: 'update' })),
-      ...github,
       ...instagram,
       ...twitter,
+      ...github,
     ]
       .sort(
         (d1, d2) => new Date(d1.date).getTime() - new Date(d2.date).getTime()
