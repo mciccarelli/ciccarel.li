@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { FeedListItem } from './';
 import { sleep } from '../lib/utils';
+import smoothscroll from 'smoothscroll-polyfill';
 import cx from 'classnames';
 
 const DEFAULT_COUNT = 8;
@@ -12,6 +13,7 @@ const Feed = ({ items }) => {
   const listRef = useRef();
 
   useEffect(() => {
+    smoothscroll.polyfill();
     if (items && items.length) {
       setListItems(items.slice(0, count));
     }
@@ -19,7 +21,8 @@ const Feed = ({ items }) => {
 
   // NOTE: faking the load more logic here on client,
   // need to add pagination to activity api endpoint
-  const handleLoadMore = async () => {
+  const handleLoadMore = async e => {
+    e.preventDefault();
     setLoading(true);
     await sleep(500);
     const diff = items.length - count;
@@ -33,15 +36,16 @@ const Feed = ({ items }) => {
 
     await sleep(100);
     window.scrollTo({
-      top: listRef.current.scrollHeight + listRef.current.clientHeight,
+      top: listRef.current.scrollHeight,
       behavior: 'smooth',
     });
   };
 
   return (
-    <div className="flex flex-col w-full">
-      <h2 className="mb-6 text-grey-light text-lg leading-tight max-w-xs">
-        Recent activity
+    <div className="feed max-w-4xl px-6 md:px-12">
+      <h2 className="font-body font-bold uppercase text-lg mb-4">
+        Recent Activity
+        <br /> —
       </h2>
       <ul className="legend">
         <li className="api">API</li>
@@ -78,10 +82,15 @@ const Feed = ({ items }) => {
       <div className="flex items-center">
         <div className="mr-4">
           {loading ? (
-            <p className="font-mono text-xs text-white my-8">LOADING...</p>
+            <p
+              className="font-mono text-xs text-white flex items-center justify-center my-8"
+              style={{ height: 40 }}
+            >
+              LOADING...
+            </p>
           ) : (
             <button
-              className="bg-transparent text-purple-light text-xs h-10 px-4 border border-purple-light w-32 my-8"
+              className="text-xs h-10 w-32 px-4 my-8"
               onClick={handleLoadMore}
             >
               Load More
@@ -94,14 +103,22 @@ const Feed = ({ items }) => {
       </div>
 
       <style jsx global>{`
+        .feed {
+          @apply .flex .flex-col .w-full;
+        }
+
         .legend {
           @apply .hidden;
         }
         .activity-item {
-          @apply .mb-4 .leading-loose .text-xs .font-mono .text-grey-light .flex .flex-col .items-start;
+          @apply .mb-4 .leading-loose .text-xs .font-mono .text-gray-400 .flex .flex-col .items-start;
         }
         .activity-item__date {
-          @apply .mr-2 .font-mono .text-grey-dark .text-xs;
+          @apply .mr-2 .font-mono .text-gray-600 .text-xs;
+        }
+
+        .activity-item a:not(:hover) {
+          @apply .text-white;
         }
 
         @screen md {
@@ -109,7 +126,7 @@ const Feed = ({ items }) => {
             @apply .flex .flex-row .mb-6;
           }
           .legend li {
-            @apply .flex .items-center .font-mono .text-xs .text-grey-light .leading-none .mr-6;
+            @apply .flex .items-center .font-mono .text-xs .text-gray-200 .leading-none .mr-6;
           }
           .legend li:before {
             @apply .mr-4;

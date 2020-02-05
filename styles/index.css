@@ -3,20 +3,19 @@
 @tailwind utilities;
 
 body {
-  @apply .font-body .text-grey-light .bg-purple-dark .antialiased;
+  @apply .font-display .antialiased .bg-black .text-gray-200;
   text-rendering: optimizeLegibility;
 }
 
 a {
-  @apply .text-purple-light;
-  transition: 0.15s opacity ease-in-out;
-  opacity: 0.85;
+  @apply .text-gray-200;
+  transition: 0.15s color ease-in-out;
 }
 
 a:hover,
 a:active,
 a:focus {
-  opacity: 1;
+  @apply .text-orange;
 }
 
 h1,
@@ -24,94 +23,19 @@ h2,
 h3,
 h4,
 h5 {
-  @apply .font-bold .text-2xl;
+  @apply .font-light .text-6xl;
 }
 
-input,
-textarea {
-  @apply .mb-4 .p-4 .text-sm .text-grey-light .bg-transparent .border .border-gray-500;
+button {
+  @apply .font-mono .uppercase .flex .items-center .justify-center .leading-none .bg-transparent .border .border-gray-400 .text-gray-400 .appearance-none;
 }
 
-input::placeholder,
-textarea::placeholder {
-  @apply .text-grey-light .opacity-50;
+button:hover {
+  @apply .bg-white .border-white .text-black;
 }
 
-label {
-  @apply .mb-2 .leading-loose .text-xs .uppercase .text-grey-light .font-mono;
-}
-
-button,
-input[type='submit'] {
-  @apply .font-mono .uppercase .flex .items-center .justify-center .leading-none .rounded;
-}
-
-button:hover,
-input[type='submit']:hover {
-  @apply .bg-purple-light .text-white;
-}
-
-button:active,
-input[type='button']:active,
-input[type='submit']:active {
-  transition: 0.3s all;
-  transform: translateY(3px);
-  border: 1px solid transparent;
-  opacity: 0.8;
-}
-
-input:disabled {
-  opacity: 0.4;
-}
-
-input[type='button']:hover {
-  transition: 0.3s all;
-}
-
-button,
-input[type='button'],
-input[type='submit'] {
-  -webkit-appearance: none;
-}
-
-@font-face {
-  font-family: 'MaisonNeueMono';
-  src: url('/static/fonts/MaisonNeueMono.woff2') format('woff2'),
-    url('/static/fonts/MaisonNeueMono.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('/static/fonts/MaisonNeue-BoldItalic.woff2') format('woff2'),
-    url('/static/fonts/MaisonNeue-BoldItalic.woff') format('woff');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('/static/fonts/MaisonNeue-Bold.woff2') format('woff2'),
-    url('/static/fonts/MaisonNeue-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('/static/fonts/MaisonNeue-BookItalic.woff2') format('woff2'),
-    url('/static/fonts/MaisonNeue-BookItalic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('/static/fonts/MaisonNeue-Book.woff2') format('woff2'),
-    url('/static/fonts/MaisonNeue-Book.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+::selection {
+  @apply .text-white .bg-black;
 }
 
 @font-face {
@@ -135,5 +59,61 @@ input[type='submit'] {
   src: url('/static/fonts/SaolDisplay-Regular.woff2') format('woff2'),
     url('/static/fonts/SaolDisplay-Regular.woff') format('woff');
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/static/fonts/MaisonNeue-Light.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/static/fonts/MaisonNeue-LightItalic.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeue-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/static/fonts/MaisonNeue-Book.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeue-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/static/fonts/MaisonNeue-BookItalic.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeue-BookItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/static/fonts/MaisonNeue-Bold.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeue-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/static/fonts/MaisonNeue-BoldItalic.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeue-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MaisonNeueMono';
+  src: url('/static/fonts/MaisonNeueMono.woff2') format('woff2'),
+    url('/static/fonts/MaisonNeueMono.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }

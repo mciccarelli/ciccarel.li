@@ -2,67 +2,50 @@ export const updates = [
   {
     date: new Date('07/01/2008'),
     content: 'Moved from Buffalo to Las Vegas',
-    type: 'life',
   },
   {
     date: new Date('12/05/2011'),
     content: 'Moved from Las Vegas to NYC',
-    type: 'life',
   },
   {
     date: new Date('01/09/2012'),
     content: 'Started at Condé Nast as a Web Developer',
-    type: 'life',
   },
   {
     date: new Date('01/05/2013'),
     content: 'Started at Grey Group as a Web Developer',
-    type: 'life',
   },
   {
     date: new Date('06/01/2013'),
     content: 'Started at VICE Media as a Lead Engineer',
-    type: 'life',
   },
   {
     date: new Date('06/07/2014'),
     content: 'Won Titanium Lion at Cannes for “Unload Your 401K”',
-    type: 'life',
   },
   {
     date: new Date('04/14/2015'),
     content: 'Webby Award Winner for “i-d.vice.com” and “sports.vice.com””',
-    type: 'life',
   },
   {
     date: new Date('03/07/2015'),
     content: '2015 Gold Cannes Lions for “The Gun shop”',
-    type: 'life',
   },
   {
     date: new Date('09/01/2016'),
     content: 'Left VICE to start freelancing full-time',
-    type: 'life',
   },
   {
     date: new Date('07/01/2018'),
     content: 'Moved to New Orleans, Lower Garden District',
-    type: 'life',
   },
   {
     date: new Date('01/19/2019'),
     content: "Appeared in Netflix's FYRE documentary.",
-    type: 'life',
   },
   {
     date: new Date('07/1/2019'),
     content: 'Moved to Miami, Wynwood Arts District.',
-    type: 'life',
-  },
-  {
-    date: new Date(2020, 0, 22, 10, 33, 30),
-    content: 'Changelog; redesigned ui, added activity feed.',
-    type: 'changelog',
   },
 ];
 
@@ -73,6 +56,13 @@ export const projects = [
     client: 'Formless',
     info: 'Blog built with WordPress, & JavaScript',
     url: 'http://formlessny.com',
+  },
+  {
+    date: new Date('7/12/2015'),
+    title: 'i-D.vice.com',
+    client: 'VICE',
+    info: 'Editorial site built with React, & Node.js',
+    url: 'https://i-d.vice.com',
   },
   {
     date: new Date('4/1/2016'),
@@ -171,17 +161,17 @@ export const socialLinks = [
   {
     image: '/static/i-instagram.svg',
     href: 'https://instagram.com/minorvillain',
-    title: 'twitter',
+    title: 'instagram',
   },
   {
     image: '/static/i-linkedin.svg',
     href: 'https://linkedin.com/in/mciccarelli',
-    title: 'twitter',
+    title: 'linkedin',
   },
   {
     image: '/static/i-github.svg',
     href: 'https://github.com/mciccarelli',
-    title: 'twitter',
+    title: 'github',
   },
   {
     image: '/static/i-email.svg',
@@ -189,65 +179,3 @@ export const socialLinks = [
     title: 'Email',
   },
 ];
-
-export const siteLinks = [
-  { href: '/', text: 'Home', description: 'Return to front page' },
-  {
-    href: '/about',
-    text: 'About',
-    description: 'Learn more about my background and approach',
-  },
-  {
-    href: '/projects',
-    text: 'Projects',
-    description: 'View some work from my portfolio',
-  },
-  {
-    href: '/writing',
-    text: 'Writing',
-    description: 'Coming soon',
-    isComingSoon: true,
-  },
-  {
-    href: '/contact',
-    text: 'Contact',
-    description: 'Get in touch to discuss a project or to say hello',
-  },
-];
-
-export const introText = `
-  Hi, I’m Michael, Creative Developer and User Experience Engineer based in 
-  <span class="italic">Miami</span> – I create digital products with 
-  knowledge and passion.
-`;
-
-export const approach = `
-  <h2 class="mb-4 text-xl text-grey-light">About my approach</h2>
-  <p class="text-base text-grey-light mb-6">
-    I work with forward-thinking people to design and build digital products
-    with a focus on interactive and responsive content. 
-  </p>
-  <p class="text-base text-grey-light mb-6">
-    From rapid prototyping to production-level applications, portfolio sites, 
-    blogs, to something more experimental with <strong>WebGL</strong>. I help
-    various people, companies and creative agencies build innovative yet accessible 
-    web projects.
-  </p>
-  <p class="text-base text-grey-light mb-12">
-    With more than a decade of experience building websites and complex interfaces, 
-    I'm happy to deliver anything from <strong>single-page apps</strong> to scalable 
-    <strong>microservices</strong> and reusable component libraries.
-  </p>
-  <h5 class="mb-4 text-base text-grey-light">Full-stack development</h5>
-  <p class="text-base text-grey-light mb-6">
-    Beyond front-end development, I'm a <strong>JAMstack</strong> 
-    specialist. Headless CMS platforms, lambda functions, static site
-    generators — whatever your requirements are, I'm happy to help plan,
-    build and deliver projects that are fast, secure and reliable.
-  </p>
-  <p class="text-base text-grey-light mb-12">
-    I'm also comfortable developing for server-side technologies. If you
-    need help putting together an application or API with Node.js and
-    Express, or Python and Django, then I'm still your guy.
-  </p>
-`;

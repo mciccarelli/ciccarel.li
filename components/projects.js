@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
+import { getPeriodInYears } from '../lib/utils';
 import cx from 'classnames';
 
-const Projects = ({ items }) => {
+const Projects = ({ items, show }) => {
   const container = {
     visible: {
       opacity: 1,
@@ -31,10 +32,15 @@ const Projects = ({ items }) => {
   };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full justify-center p-6 md:p-12">
+      <h5 className="font-body font-bold text-lg uppercase tracking-tight mb-4">
+        Select work from portfolio{' '}
+        <span className="text-gray-800">({getPeriodInYears(items)})</span>
+        <br /> —
+      </h5>
       <motion.ol
         initial="hidden"
-        animate="visible"
+        animate={show ? 'visible' : 'hidden'}
         variants={container}
         className="plist"
       >
@@ -45,7 +51,8 @@ const Projects = ({ items }) => {
             <motion.li
               key={`project-${i}`}
               custom={i}
-              animate="visible"
+              initial="hidden"
+              animate={show ? 'visible' : 'hidden'}
               variants={variants}
               className={cx('plist__item', {
                 'plist__item--coming-soon': isComingSoon,
@@ -53,6 +60,7 @@ const Projects = ({ items }) => {
             >
               <a
                 className="plist__item__title"
+                onClick={isComingSoon ? e => e.preventDefault() : null}
                 href={isComingSoon ? '#' : url}
                 target={isComingSoon ? '_self' : '_blank'}
               >
@@ -63,7 +71,6 @@ const Projects = ({ items }) => {
                   ) : (
                     <div className="flex flex-col md:flex-row">
                       <div className="info my-2 md:my-0">{info}</div>
-                      {/* <div className="client md:hidden ">CLIENT: {client}</div> */}
                     </div>
                   )}
                 </div>
@@ -84,13 +91,15 @@ const Projects = ({ items }) => {
           margin-bottom: 0;
         }
 
-        .plist__item--coming-soon .plist__item__title {
-          @apply .cursor-default .text-grey-dark;
+        .plist__item--coming-soon .plist__item__title,
+        .plist__item--coming-soon .plist__item__title:hover {
+          @apply .cursor-default .text-gray-400;
           opacity: 0.5;
         }
 
         .plist__item--coming-soon .plist__item__title::before,
         .plist__item--coming-soon .plist__item__title:hover::before {
+          @apply .w-full .text-gray-400;
           width: 100%;
           background: rgba(#000, 0.9);
         }
@@ -101,23 +110,32 @@ const Projects = ({ items }) => {
         }
 
         .plist__item--coming-soon .plist__item__details {
-          @apply .text-grey-light;
+          @apply .text-white;
           opacity: 1;
         }
 
         .plist__item__title {
-          @apply .font-body .font-bold .tracking-widest .text-xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none;
+          @apply .font-display .font-normal .text-xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none .text-gray-200;
           transition: 0.4s;
         }
 
+        .plist__item__title:hover {
+          @apply .text-white;
+        }
+
         .plist__item__details {
-          @apply .text-grey-light .block .font-mono .font-normal .uppercase .text-xs .mb-0 .tracking-normal .leading-normal;
+          @apply .text-gray-200 .block .font-body .font-bold .uppercase .text-xs .mb-0 .tracking-normal .leading-normal;
         }
 
         @screen md {
+          .plist__item {
+            @apply .mb-0;
+          }
+
           .plist__item__title {
             @apply .text-6xl;
-            height: 50px;
+            font-size: 5.5vw;
+            height: 4vw;
           }
 
           .plist__item__title::before {
@@ -141,13 +159,13 @@ const Projects = ({ items }) => {
             transform: translateY(-40%);
             height: 30px;
             width: 0;
-            background: theme('colors.yellow');
+            background: theme('colors.orange');
             transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
           }
 
           .plist__item__title:hover::before {
             width: 100%;
-            background: theme('colors.yellow');
+            background: theme('colors.orange');
             transition: width 0.2s cubic-bezier(0.77, 0, 0.175, 1);
           }
 
@@ -166,8 +184,8 @@ const Projects = ({ items }) => {
             top: 50%;
             left: 0;
             z-index: 1;
-            transform: translateY(-35%);
-            transition: all 0.2s ease;
+            transform: translateY(-30%);
+            transition: all 0.5s ease;
             opacity: 0;
           }
 

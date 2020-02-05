@@ -4,8 +4,7 @@
   "build": {
     "env": {
       "TWITTER_CLIENT_USERNAME": "@twitter-client-username",
-      "TWITTER_CLIENT_PASSWORD": "@twitter-client-password",
-      "SENDGRID_API_KEY": "@sendgrid-api-key"
+      "TWITTER_CLIENT_PASSWORD": "@twitter-client-password"
     }
   },
   "routes": [
