@@ -45,7 +45,7 @@ const Index = ({ data }) => {
           initial="visible"
           animate={hideArrow ? 'hidden' : 'visible'}
           variants={variants}
-          className="fixed bottom-0 left-0 p-6 md:p-12 text-xl text-gray-200 pointer-events-none"
+          className="hidden md:block fixed bottom-0 left-0 p-6 md:p-12 text-xl text-gray-200 pointer-events-none"
         >
           ↓
         </motion.div>

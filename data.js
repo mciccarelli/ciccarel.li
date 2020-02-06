@@ -100,6 +100,13 @@ export const projects = [
     url: 'http://vennskincare.com',
   },
   {
+    date: new Date('6/28/2018'),
+    title: 'Flipside Crypto',
+    client: 'Flipside Crypto',
+    info: 'Cryptocurrency tracking app built with React.js, & Highcharts',
+    url: 'https://flipsidecrypto.com/',
+  },
+  {
     date: new Date('9/12/2018'),
     title: 'Avatar Companies',
     client: 'Wet Cement',

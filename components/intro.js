@@ -1,6 +1,6 @@
 const Intro = () => (
   <div className="p-6 md:p-12 max-w-2xl">
-    <p className="font-body font-bold leading-none uppercase text-lg md:text-3xl mb-4 text-gray-200">
+    <p className="font-body font-bold uppercase text-sm md:text-3xl leading-snug md:leading-none mb-4 text-gray-200">
       Michael Ciccarell is a Creative Developer &amp; UX Engineer based in
       Miami—He runs a small software consultancy and builds digital products for
       various companies, agencies, startups, and individuals. Available for

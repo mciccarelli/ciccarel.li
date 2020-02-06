@@ -33,7 +33,7 @@ const Projects = ({ items, show }) => {
 
   return (
     <div className="flex flex-col w-full justify-center p-6 md:p-12">
-      <h5 className="font-body font-bold text-lg uppercase tracking-tight mb-4">
+      <h5 className="font-body font-bold text-sm md:text-lg uppercase mb-4">
         Select work from portfolio{' '}
         <span className="text-gray-800">({getPeriodInYears(items)})</span>
         <br /> —
@@ -63,16 +63,11 @@ const Projects = ({ items, show }) => {
                 onClick={isComingSoon ? e => e.preventDefault() : null}
                 href={isComingSoon ? '#' : url}
                 target={isComingSoon ? '_self' : '_blank'}
+                rel="noreferrer"
               >
                 {title}
                 <div className="plist__item__details text-xs md:text-sm">
-                  {isComingSoon ? (
-                    'Coming Soon'
-                  ) : (
-                    <div className="flex flex-col md:flex-row">
-                      <div className="info my-2 md:my-0">{info}</div>
-                    </div>
-                  )}
+                  {isComingSoon ? 'Coming Soon' : info}
                 </div>
               </a>
             </motion.li>
@@ -115,7 +110,7 @@ const Projects = ({ items, show }) => {
         }
 
         .plist__item__title {
-          @apply .font-display .font-normal .text-xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none .text-gray-200;
+          @apply .font-display .font-normal .text-2xl .uppercase .inline-block .relative .no-underline .border-0 .leading-none .text-gray-200;
           transition: 0.4s;
         }
 
@@ -124,7 +119,7 @@ const Projects = ({ items, show }) => {
         }
 
         .plist__item__details {
-          @apply .text-gray-200 .block .font-body .font-bold .uppercase .text-xs .mb-0 .tracking-normal .leading-normal;
+          @apply .text-gray-200 .block .font-body .font-bold .uppercase .text-xs .mb-0 .leading-snug;
         }
 
         @screen md {
@@ -180,11 +175,11 @@ const Projects = ({ items, show }) => {
           }
 
           .plist__item__details {
-            @apply .absolute .px-4 .text-black;
+            @apply .absolute .px-4 .text-black .leading-none;
             top: 50%;
             left: 0;
             z-index: 1;
-            transform: translateY(-30%);
+            transform: translateY(-25%);
             transition: all 0.5s ease;
             opacity: 0;
           }

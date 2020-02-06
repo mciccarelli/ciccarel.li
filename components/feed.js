@@ -43,7 +43,7 @@ const Feed = ({ items }) => {
 
   return (
     <div className="feed max-w-4xl px-6 md:px-12">
-      <h2 className="font-body font-bold uppercase text-lg mb-4">
+      <h2 className="font-body font-bold uppercase text-sm md:text-lg mb-4">
         Recent Activity
         <br /> —
       </h2>
@@ -97,7 +97,7 @@ const Feed = ({ items }) => {
             </button>
           )}
         </div>
-        <span className="font-mono text-grey-dark text-xs">
+        <span className="font-mono text-gray-600 text-xs">
           {count}/{items.length}
         </span>
       </div>
