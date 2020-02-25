@@ -26,8 +26,8 @@ const handler = async (_, res) => {
     ]);
 
     const sortedItems = [
-      ...projects.map(project => ({ ...project, feedSource: 'project' })),
-      ...updates.map(update => ({ ...update, feedSource: 'update' })),
+      ...projects.map(project => ({ ...project, type: 'project' })),
+      ...updates.map(update => ({ ...update, type: 'update' })),
       ...instagram,
       ...twitter,
       ...github,

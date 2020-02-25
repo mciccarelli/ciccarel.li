@@ -1,6 +1,6 @@
 # ciccarel.li
 
-website built with React, Next.js, Tailwind + Framer Motion
+portfolio/personal website built with Next.js, Tailwind + Framer Motion
 
 ## How to use
 

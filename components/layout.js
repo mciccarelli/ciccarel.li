@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
-import { Footer } from './';
+import smoothscroll from 'smoothscroll-polyfill';
 
 const Layout = ({ title, description, children }) => {
+  useEffect(() => {
+    smoothscroll.polyfill();
+  }, []);
+
   return (
-    <div className="relative min-h-screen">
+    <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -13,16 +17,15 @@ const Layout = ({ title, description, children }) => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </Head>
-      <main>{children}</main>
-      <Footer />
+      <main className="px-8 md:px-16">{children}</main>
     </div>
   );
 };
 
 Layout.defaultProps = {
-  title: 'Michael Ciccarelli - Independent Creative Developer',
+  title: 'michael ciccarelli — independent creative developer',
   description:
-    'Software engineer, full-stack web developer, freelancer, based in Miami.',
+    'software engineer based in miami, consultant to early-stage technology companies, creative agencies, and global brands.',
 };
 
 export default Layout;

@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { FeedListItem } from './';
 import { sleep } from '../lib/utils';
 import smoothscroll from 'smoothscroll-polyfill';
 import cx from 'classnames';
 
-const DEFAULT_COUNT = 8;
+const DEFAULT_COUNT = 5;
 
-const Feed = ({ items }) => {
+const Feed = ({ items, isComplete }) => {
   const [loading, setLoading] = useState(false);
   const [count, increment] = useState(DEFAULT_COUNT);
   const [listItems, setListItems] = useState([]);
@@ -14,45 +15,72 @@ const Feed = ({ items }) => {
 
   useEffect(() => {
     smoothscroll.polyfill();
-    if (items && items.length) {
-      setListItems(items.slice(0, count));
-    }
-  }, [count]);
+  }, []);
+
+  useEffect(() => {
+    if (isComplete) handleLoadMore();
+    if (items && items.length) setListItems(items.slice(0, count));
+  }, [count, isComplete]);
 
   // NOTE: faking the load more logic here on client,
   // need to add pagination to activity api endpoint
   const handleLoadMore = async e => {
-    e.preventDefault();
+    if (e) e.preventDefault();
+    if (loading) return;
+
     setLoading(true);
+
     await sleep(500);
+
     const diff = items.length - count;
-    if (diff >= 8) {
-      increment(count + 8);
+    if (diff >= DEFAULT_COUNT) {
+      increment(count + DEFAULT_COUNT * 2);
     } else if (diff > 0) {
       increment(count + diff);
     }
 
     setLoading(false);
 
-    await sleep(100);
-    window.scrollTo({
-      top: listRef.current.scrollHeight,
-      behavior: 'smooth',
-    });
+    await sleep(250);
+  };
+
+  const container = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  };
+
+  const variants = {
+    visible: i => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.2,
+      },
+    }),
+    hidden: { opacity: 0, y: '-50%' },
   };
 
   return (
-    <div className="feed max-w-4xl px-6 md:px-12">
-      <h2 className="font-body font-bold uppercase text-sm md:text-lg mb-4">
-        Recent Activity
-        <br /> —
-      </h2>
+    <div className="feed max-w-4xl mb-12 md:mb-24">
+      <h2 className="mb-8">— activity feed</h2>
       <ul className="legend">
         <li className="api">API</li>
         <li
           className={cx('instagram', {
             'opacity-25':
-              items.filter(item => item.feedSource === 'instagram').length < 1,
+              items.filter(item => item.type === 'instagram').length < 1,
           })}
         >
           Instagram
@@ -60,7 +88,7 @@ const Feed = ({ items }) => {
         <li
           className={cx('twitter', {
             'opacity-25':
-              items.filter(item => item.feedSource === 'twitter').length < 1,
+              items.filter(item => item.type === 'twitter').length < 1,
           })}
         >
           Twitter
@@ -68,34 +96,40 @@ const Feed = ({ items }) => {
         <li
           className={cx('github', {
             'opacity-25':
-              items.filter(item => item.feedSource === 'github').length < 1,
+              items.filter(item => item.type === 'github').length < 1,
           })}
         >
           Github
         </li>
       </ul>
-      <ul ref={listRef} className="activity">
+      <motion.ul
+        initial="hidden"
+        animate="visible"
+        variants={container}
+        ref={listRef}
+        className="activity"
+      >
         {listItems.map((item, idx) => (
-          <FeedListItem key={idx} {...item} />
+          <motion.li
+            key={`activity-item-${idx}`}
+            custom={listItems.length <= 5 ? idx : (listItems.length + idx) % 10}
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+          >
+            <FeedListItem {...item} />
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
       <div className="flex items-center">
         <div className="mr-4">
-          {loading ? (
-            <p
-              className="font-mono text-xs text-white flex items-center justify-center my-8"
-              style={{ height: 40 }}
-            >
-              LOADING...
-            </p>
-          ) : (
-            <button
-              className="text-xs h-10 w-32 px-4 my-8"
-              onClick={handleLoadMore}
-            >
-              Load More
-            </button>
-          )}
+          <button
+            className="text-xs h-10 w-32 px-4 my-8"
+            onClick={handleLoadMore}
+            disabled={loading}
+          >
+            {loading ? 'LOADING...' : 'Load More'}
+          </button>
         </div>
         <span className="font-mono text-gray-600 text-xs">
           {count}/{items.length}
@@ -118,12 +152,12 @@ const Feed = ({ items }) => {
         }
 
         .activity-item a:not(:hover) {
-          @apply .text-white;
+          @apply .text-white opacity-100;
         }
 
         @screen md {
           .legend {
-            @apply .flex .flex-row .mb-6;
+            @apply .flex .flex-row .mb-4;
           }
           .legend li {
             @apply .flex .items-center .font-mono .text-xs .text-gray-200 .leading-none .mr-6;
@@ -148,7 +182,7 @@ const Feed = ({ items }) => {
             transform: translateY(-1px);
           }
           .api:before {
-            @apply .bg-orange;
+            @apply .bg-purple;
           }
           .instagram:before {
             @apply .bg-instagram;

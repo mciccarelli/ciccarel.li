@@ -61,22 +61,22 @@ export default async (req, res) => {
     let tweets = timeline
       .filter(t => t.in_reply_to_screen_name !== TWITTER_SCREEN_NAME)
       .map(({ created_at, text, retweeted_status, entities, ...rest }) => ({
-        feedSource: 'twitter',
+        ...rest,
         text,
         date: created_at,
         retweet: !!retweeted_status,
         entities,
-        ...rest,
+        type: 'twitter',
       }));
 
     tweets.push(
       ...likes.map(({ created_at, text, entities, ...rest }) => ({
-        feedSource: 'twitter',
+        ...rest,
         text,
         date: created_at,
         like: true,
         entities,
-        ...rest,
+        type: 'twitter',
       }))
     );
 

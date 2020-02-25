@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Layout, Intro, Projects, Feed } from '../components';
-import { API_URL } from '../lib/constants';
+import { Layout, Intro, Projects, Background, Feed } from '../components';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { scrollToTop } from '../lib/utils';
+import { API_URL } from '../lib/constants';
 import fetch from 'isomorphic-unfetch';
+import useDimensions from 'react-use-dimensions';
 
 const Index = ({ data }) => {
-  const [hideArrow, setHideArrow] = useState(false);
-  const [showProjects, setShowProjects] = useState(false);
   const { scrollYProgress } = useViewportScroll();
+  const [projectRef, { y: projectTop }] = useDimensions();
+  const [isComplete, setIsComplete] = useState(false);
+  const [isVisible, toggle] = useState({ arrow: true, projects: false });
   const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+
+  useEffect(() => {
+    yRange.onChange(v => {
+      setIsComplete(v >= 1);
+      toggle({
+        arrow: v <= 0.05, // 5%
+        projects: v >= 0.1, // 10%
+      });
+    });
+  }, [yRange]);
 
   const variants = {
     visible: {
@@ -24,38 +37,35 @@ const Index = ({ data }) => {
     },
   };
 
-  useEffect(() => {
-    yRange.onChange(v => {
-      // scrolled 5% the page
-      setHideArrow(v >= 0.05);
-      // scrolled 30% the page
-      setShowProjects(v >= 0.3);
-    });
-  }, [yRange]);
-
   // filter out projects from activity feed data
-  const projects = data.filter(x => x.feedSource === 'project');
+  const projects = data.filter(item => item.type === 'project');
 
   return (
     <Layout>
       <section>
         <Intro />
-        <Feed items={data} />
-        <motion.div
+        <motion.span
+          className="text-2xl text-gray-400 user-select-none w-4 cursor-pointer"
           initial="visible"
-          animate={hideArrow ? 'hidden' : 'visible'}
+          animate={isVisible.arrow ? 'visible' : 'hidden'}
           variants={variants}
-          className="hidden md:block fixed bottom-0 left-0 p-6 md:p-12 text-xl text-gray-200 pointer-events-none"
+          onClick={() => scrollToTop(projectTop)}
         >
-          ↓
-        </motion.div>
+          &darr;
+        </motion.span>
+      </section>
+      <section ref={projectRef}>
+        <Projects items={projects} show={isVisible.projects} />
       </section>
       <section>
-        <Projects items={projects} show={showProjects} />
+        <Background />
       </section>
-      <style jsx>{`
+      <section>
+        <Feed items={data} isComplete={isComplete} />
+      </section>
+      <style jsx global>{`
         section {
-          @apply .flex flex-col .min-h-screen;
+          @apply flex flex-col py-12 justify-center;
         }
       `}</style>
     </Layout>

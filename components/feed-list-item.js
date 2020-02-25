@@ -1,9 +1,10 @@
+import { isBefore } from 'date-fns';
 import { relativeTime } from '../lib/utils';
 import { TWITTER_SCREEN_NAME } from '../lib/constants';
 
 // TODO: clean this rendering logic up, into separate sources
 const FeedListItem = ({
-  feedSource,
+  type,
   id_str,
   date,
   client,
@@ -17,17 +18,18 @@ const FeedListItem = ({
   retweet,
   entities,
   user,
-  type,
+  eventType,
   repo,
   payload,
   actor,
-  ...rest
 }) => {
-  switch (feedSource) {
+  //=> false
+
+  switch (type) {
     case 'project':
-      if (isComingSoon) return <></>;
+      if (isComingSoon || !isBefore(new Date(date), new Date())) return <></>;
       return (
-        <li className="activity-item api">
+        <div className="activity-item api">
           <div className="activity-item__date">{`${relativeTime(date)}`}</div>
           <div className="activity-item__content">
             Released{' '}
@@ -36,31 +38,31 @@ const FeedListItem = ({
             </a>{' '}
             for {client}.
           </div>
-        </li>
+        </div>
       );
     case 'update':
       return (
-        <li className="activity-item api">
+        <div className="activity-item api">
           <div className="activity-item__date">{`${relativeTime(date)}`}</div>{' '}
           <div
             className="activity-item__content"
             dangerouslySetInnerHTML={{ __html: content }}
           />
-        </li>
+        </div>
       );
     case 'instagram':
       return (
-        <li className="activity-item instagram">
+        <div className="activity-item instagram">
           <div className="activity-item__date">{`${relativeTime(date)}`}</div>
           <div className="activity-item__content">
             Posted <a href={url}>a photo</a>{' '}
             {location ? `from ${location}` : 'on Instagram'}.
           </div>
-        </li>
+        </div>
       );
     case 'twitter':
       return (
-        <li className="activity-item twitter">
+        <div className="activity-item twitter">
           <div className="activity-item__date">{`${relativeTime(date)}`}</div>{' '}
           {like && (
             <div className="activity-item__content">
@@ -101,13 +103,13 @@ const FeedListItem = ({
               on Twitter.
             </div>
           )}
-        </li>
+        </div>
       );
     case 'github':
       return (
-        <li className="activity-item github">
+        <div className="activity-item github">
           <div className="activity-item__date">{`${relativeTime(date)}`}</div>{' '}
-          {type === 'PushEvent' && (
+          {eventType === 'PushEvent' && (
             <div className="activity-item__content">
               Pushed{' '}
               <a
@@ -119,12 +121,12 @@ const FeedListItem = ({
               on Github.
             </div>
           )}
-          {/* {type === 'StarEvent' && (
+          {/* {eventType === 'StarEvent' && (
             <>
               Starred <a href="">a repo</a> on <a href="#">Github</a>
             </>
           )} */}
-        </li>
+        </div>
       );
   }
 };

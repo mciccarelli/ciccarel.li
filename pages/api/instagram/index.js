@@ -11,7 +11,7 @@ export default async () => {
     // response shape: data.data.user.edge_owner_to_timeline_media.edges
     return await data.graphql.user.edge_owner_to_timeline_media.edges.map(
       ({ node }) => ({
-        feedSource: 'instagram',
+        type: 'instagram',
         url: `https://instagram.com/p/${node.shortcode}`,
         location: node && node.location && node.location.name,
         date: new Date(node.taken_at_timestamp * 1000),

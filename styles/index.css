@@ -3,27 +3,19 @@
 @tailwind utilities;
 
 body {
-  @apply .font-display .antialiased .bg-black .text-gray-200;
+  @apply .font-body .antialiased .bg-gray-900 .text-gray-400;
   text-rendering: optimizeLegibility;
 }
 
 a {
-  @apply .text-gray-200;
-  transition: 0.15s color ease-in-out;
+  @apply .text-gray-200 .opacity-75;
+  transition: 0.15s opacity ease-in-out;
 }
 
 a:hover,
 a:active,
 a:focus {
-  @apply .text-orange;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  @apply .font-light .text-6xl;
+  @apply .opacity-100;
 }
 
 button {
@@ -34,32 +26,21 @@ button:hover {
   @apply .bg-white .border-white .text-black;
 }
 
+p {
+  @apply .text-base .mb-4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply .font-bold .text-base .mb-8;
+}
+
 ::selection {
-  @apply .text-white .bg-black;
-}
-
-@font-face {
-  font-family: 'Saol Display';
-  src: url('/static/fonts/SaolDisplay-Light.woff2') format('woff2'),
-    url('/static/fonts/SaolDisplay-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Saol Display';
-  src: url('/static/fonts/SaolDisplay-LightItalic.woff2') format('woff2'),
-    url('/static/fonts/SaolDisplay-LightItalic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Saol Display';
-  src: url('/static/fonts/SaolDisplay-Regular.woff2') format('woff2'),
-    url('/static/fonts/SaolDisplay-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+  @apply .text-gray-900;
+  background: hsla(0, 0%, 86.3%, 0.99);
 }
 
 @font-face {
