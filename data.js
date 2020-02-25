@@ -54,7 +54,7 @@ export const projects = [
     date: new Date('7/12/2015'),
     title: 'i-D x VICE',
     client: 'VICE',
-    info: 'React & Node.js Development',
+    info: 'React & Node.js Development. Design by i-D',
     url: 'https://i-d.vice.com',
   },
   {
@@ -96,14 +96,14 @@ export const projects = [
     date: new Date('6/29/2019'),
     title: 'G9 Ventures',
     client: 'Pentagram',
-    info: 'React & Contentful Development.',
+    info: 'React & Contentful Development. Design by Pentagram.',
     url: 'https://g9.ventures',
   },
   {
     date: new Date('10/23/2019'),
     title: 'Common Studio',
     client: 'Common',
-    info: 'React & Contentful Development.',
+    info: 'React & Contentful Development. Design by Common',
     url: 'http://common.com/studio',
   },
   {

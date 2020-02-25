@@ -3,10 +3,7 @@ import Head from 'next/head';
 import smoothscroll from 'smoothscroll-polyfill';
 
 const Layout = ({ title, description, children }) => {
-  useEffect(() => {
-    smoothscroll.polyfill();
-  }, []);
-
+  useEffect(() => smoothscroll.polyfill(), []);
   return (
     <div>
       <Head>
@@ -23,9 +20,9 @@ const Layout = ({ title, description, children }) => {
 };
 
 Layout.defaultProps = {
-  title: 'michael ciccarelli — independent creative developer',
+  title: 'michael ciccarelli — creative developer',
   description:
-    'software engineer based in miami, consultant to early-stage technology companies, creative agencies, and global brands.',
+    'software developer based in miami, consultant to early-stage technology companies, creative agencies, and global brands.',
 };
 
 export default Layout;

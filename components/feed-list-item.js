@@ -10,21 +10,15 @@ const FeedListItem = ({
   client,
   isComingSoon,
   content,
-  title,
-  text,
   location,
   url,
   like,
   retweet,
-  entities,
   user,
   eventType,
   repo,
   payload,
-  actor,
 }) => {
-  //=> false
-
   switch (type) {
     case 'project':
       if (isComingSoon || !isBefore(new Date(date), new Date())) return <></>;
@@ -121,11 +115,13 @@ const FeedListItem = ({
               on Github.
             </div>
           )}
-          {/* {eventType === 'StarEvent' && (
-            <>
-              Starred <a href="">a repo</a> on <a href="#">Github</a>
-            </>
-          )} */}
+          {eventType === 'StarEvent' && (
+            <div className="activity-item__content">
+              Starred{' '}
+              <a href={`https://github.com/${repo.name}`}>a public repo</a> on
+              Github.
+            </div>
+          )}
         </div>
       );
   }
