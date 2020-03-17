@@ -121,11 +121,11 @@ export const projects = [
     url: 'https://noahapartments.com',
   },
   {
-    date: new Date('2/28/2020'),
+    date: new Date('3/15/2020'),
     title: 'EL DORADO',
     client: 'Pentagram',
     info: 'React & Contentful Development. Design by Pentagram',
-    url: 'http://eldo.us',
+    url: 'https://eldo.us',
   },
   // {
   //   isComingSoon: true,
