@@ -1,6 +1,6 @@
 # ciccarel.li
 
-portfolio/personal website built with Next.js, Tailwind + Framer Motion
+portfolio site built with Next.js, Tailwind + Framer Motion
 
 ## How to use
 
