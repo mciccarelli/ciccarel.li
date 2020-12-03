@@ -86,13 +86,6 @@ export const projects = [
     url: 'http://vennskincare.com',
   },
   {
-    date: new Date('9/12/2018'),
-    title: 'Avatar Companies',
-    client: 'Wet Cement',
-    info: 'React, styled-components, & Contentful Development.',
-    url: 'http://avatarcompanies.com',
-  },
-  {
     date: new Date('6/29/2019'),
     title: 'G9 Ventures',
     client: 'Pentagram',
@@ -127,14 +120,20 @@ export const projects = [
     info: 'React & Contentful Development. Design by Pentagram',
     url: 'https://eldo.us',
   },
-  // {
-  //   isComingSoon: true,
-  //   date: new Date('3/1/2020'),
-  //   title: 'Hayloft Auctions',
-  //   client: 'Doyle',
-  //   info: 'Auction Platform built with Next.js, & Apollo GraphQL.',
-  //   url: 'https://hayloft.now.sh',
-  // },
+  {
+    date: new Date('5/4/2020'),
+    title: 'The Well',
+    client: 'The Well',
+    info: 'Headless eCommerce site built with Vue.js, Sanity & Shopify.',
+    url: 'https://the-well.com',
+  },
+  {
+    date: new Date('10/5/2020'),
+    title: 'Elara World',
+    client: 'Elara',
+    info: 'Headless eCommerce site built with Next.js, Sanity & Shopify.',
+    url: 'https://elara.world',
+  },
 ];
 
 export const socialLinks = [
